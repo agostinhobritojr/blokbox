@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/next.svg</file>
+        <file>resources/prev.svg</file>
+        <file>resources/stop.svg</file>
+        <file>resources/pause.svg</file>
+    </qresource>
+</RCC>

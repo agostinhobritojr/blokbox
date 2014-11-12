@@ -1,0 +1,70 @@
+#ifndef SPECTROGRAPH_H
+#define SPECTROGRAPH_H
+#include "abstractspectrograph.h"
+
+#include <QWidget>
+#include <QPainter>
+#include <QBrush>
+#include <QColor>
+#include <QMouseEvent>
+#include <QVector>
+#include <QDebug>
+#include <QTimer>
+#include <QAction>
+
+using namespace std;
+
+#define NUM_BANDS 60
+
+class Spectrograph : public AbstractSpectrograph
+{
+  Q_OBJECT
+public:
+  // see description in spectrograph.cpp
+
+  explicit Spectrograph(QWidget *parent = 0);
+  ~Spectrograph();
+signals:
+
+protected:
+  void paintEvent(QPaintEvent *e);
+  void resizeEvent(QResizeEvent *e);
+  void contextMenuEvent(QContextMenuEvent *e);
+  void timerEvent(QTimerEvent *e);
+protected slots:
+  void selectBarColor(void);
+  void selectBackColor(void);
+  void selectRandColor(void);
+  void selectStyleBar(void);
+  void selectSuavity(void);
+  //void forma (void);
+
+public slots:
+  void loadSamples(QVector<double> &_spectrum);
+  void loadLevels(double left, double right);
+
+private:
+  // stores the fft spectrum to be displayed
+  QVector<double> spectrum;
+
+  // left and right mean audio levels
+  double leftLevel, rightLevel;
+
+  // brushes for background and bars
+  QBrush backgroundBrush, barBrush,barStyleBrush;
+
+  // bar color
+  QColor barColor;
+  QColor backColor;
+  // color action to activate context menu
+  QAction *colorAction;
+  QAction *colorBack;
+  QAction *colorRandom;
+  QAction *styleBar;
+  QAction *suavity_onoff;
+
+  // some variables
+  float barSpacing, barWidth, myHeight;
+};
+
+#endif // SPECTROGRAM_H

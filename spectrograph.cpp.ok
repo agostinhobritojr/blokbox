@@ -1,0 +1,265 @@
+#include "spectrograph.h"
+#include <QDebug>
+#include <QMenu>
+#include <QColorDialog>
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+int contador=0;
+float p1x, p1y, p2x;
+float p1x2, p1y2, p2x2;
+float delta;
+int r,g,b;
+int randomic = 1;
+int estilo=0,suavity=0;
+
+Spectrograph::Spectrograph(QWidget *parent) :
+    AbstractSpectrograph(parent){
+    // resize spectrum according to the number of bands to
+    // be displayed
+    // this can be a configurable characteristic
+    spectrum.resize(NUM_BANDS);
+    startTimer(30);
+    // initialize spectrum
+
+
+    // drawing parameter - space between spectrum bars
+    // 1 pixel was chosen
+    barSpacing = 0;
+
+    // spectrum bar color
+    barColor = Qt::white;
+
+    // spectrum bar brush (color+pattern)
+    barBrush.setColor(barColor);
+    barBrush.setStyle(Qt::SolidPattern);
+
+    // creates the action that display the contextual menu
+    colorAction = new QAction("Bar color",this);
+    colorBack = new QAction("Background Color",this);
+    colorRandom = new QAction("Random Color bar",this);
+    styleBar = new QAction("Style Bar", this);
+    suavity_onoff = new QAction ("Bar Suavity",this);
+    // if the action is triggered, calls selectBarColor function
+    // you can do some work here
+    connect(colorAction,SIGNAL(triggered()),this,SLOT(selectBarColor()));
+    connect(colorBack,SIGNAL(triggered()),this,SLOT(selectBackColor()));
+    connect(colorRandom,SIGNAL(triggered()),this,SLOT(selectRandColor()));
+    connect(styleBar,SIGNAL(triggered()),this,SLOT(selectStyleBar()));
+    connect(suavity_onoff,SIGNAL(triggered()),this,SLOT(selectSuavity()));
+}
+void Spectrograph::timerEvent(QTimerEvent *e){
+    if(suavity%2==0){
+        for(int i=0; i<NUM_BANDS; i++){
+            spectrum[i]*=0.999;
+        }
+        repaint();
+    }
+}
+
+
+Spectrograph::~Spectrograph(){
+    delete colorAction;
+    delete colorBack;
+    delete colorRandom;
+    delete styleBar;
+    delete suavity_onoff;
+}
+
+// what happens if the user resizes the widget
+void Spectrograph::resizeEvent(QResizeEvent *e){
+    e->accept();
+    // bar width changes according to widget width
+    barWidth=(float)0.6*width()/NUM_BANDS-1;
+
+    // widget height may change
+    myHeight = height();
+
+    // redraw everything, since the window size has
+    // changed
+    repaint();
+}
+
+// loads left and right level for audio
+void Spectrograph::loadLevels(double left, double right){
+    // give some gain so the bar does not display so small
+    leftLevel = 10*left;
+    rightLevel = 10*right;
+}
+
+// user called contextual menu pressing the right button
+void Spectrograph::contextMenuEvent(QContextMenuEvent *e){
+    // accepts the event (not necessary)
+    e->accept();
+
+    // creates new menu
+    QMenu menu(this);
+    //QMenu back(this);
+
+    // add the action
+    menu.addAction(colorAction);
+    menu.addAction(colorBack);
+    menu.addAction(colorRandom);
+    menu.addAction(styleBar);
+    menu.addAction(suavity_onoff);
+    // pops up menu at mouse position
+    menu.exec(e->globalPos());
+}
+
+// select a new color
+void Spectrograph::selectBarColor(void){//função para mudar a cor das barras
+    // creates a color dialog object
+    QColorDialog d;
+
+    // display the dialog
+    // if the user presses ok...
+    if(d.exec()){
+        // get the selected color and
+        // prepare the bar brush
+        barColor = d.selectedColor();
+        barBrush.setColor(barColor);
+
+    }
+}
+void Spectrograph::selectBackColor(void){//função para mudar o background
+    // creates a color dialog object
+    QColorDialog d;
+
+    // display the dialog
+    // if the user presses ok...
+    if(d.exec()){
+        // get the selected color and
+        // prepare the bar brush
+        backColor = d.selectedColor();
+        backgroundBrush.setColor(backColor);
+
+    }
+}
+
+void Spectrograph::selectRandColor(void){//ativar o esquemas de cores randomico
+    // creates a color dialog object
+    randomic++;
+}
+void Spectrograph::selectStyleBar(void){//mudar estilo das barras
+    estilo++;
+}
+void Spectrograph::selectSuavity(void){//ativar ou desativar suavidade das barras
+    suavity++;
+}
+// Draws the entire widget
+void Spectrograph::paintEvent(QPaintEvent *e){
+    // create a painter to draw in "this" window
+    QPainter p(this);
+
+
+
+    e->accept();
+
+    // draw with antialiasing (beatiful lines)
+    p.setRenderHint(QPainter::Antialiasing);
+
+    // background is black
+    p.setBrush(backColor);
+
+    // draw a rectangle spanning the entire widget
+    p.drawRect(rect());//isso é o fundo
+
+    // no pen needed (lines are not displayed)
+    p.setPen(Qt::NoPen);
+
+    // change current brush to the bar brush
+    p.setBrush(barBrush);
+
+    // draw all bands
+    if(estilo%2==0){
+        for(int i=0; i<NUM_BANDS;i++){
+            // calculate bar coordinates
+            if(randomic%2==0){
+                srand(time(NULL));
+                // spectrum bar color random
+                r = rand() % 255;
+                g = rand() % 255;
+                b = rand() % 255;
+                barColor = QColor(r,g,b);
+
+                // spectrum bar brush (color+pattern)
+                barBrush.setColor(barColor);
+            }
+            delta = 0.25*width();
+            p1x = ((float)i*(barWidth+barSpacing))+delta;
+            p2x =(p1x+barWidth);
+            p1y = ((float)myHeight -spectrum[i]*myHeight);
+
+            // draw a rectangle to each spectrum bar
+            p.drawRect(QRectF(QPointF(p1x,p1y/2),QPointF(p2x,myHeight/2)));
+
+            p1x2 = ((float)i*(barWidth+barSpacing))+delta;
+            p2x2 =p1x2+barWidth;
+            p1y2 = ((float)myHeight +spectrum[i]*myHeight);
+
+            // draw a rectangle to each spectrum bar
+            p.drawEllipse(QRectF(QPointF(p1x2,p1y2/2),QPointF(p2x2,myHeight/2)));//formato da barra
+
+        }
+    }else {
+        if(randomic%2==0){
+            srand(time(NULL));
+            // spectrum bar color random
+            r = rand() % 255;
+            g = rand() % 255;
+            b = rand() % 255;
+            barColor = QColor(r,g,b);
+
+            // spectrum bar brush (color+pattern)
+            barBrush.setColor(barColor);
+        }
+        for(int i=0; i<NUM_BANDS;i++){
+            // calculate bar coordinates
+            delta = 0.25*width();
+            p1x = (float)i*(barWidth+barSpacing)+delta;
+            p2x = p1x+barWidth;
+            p1y = (float)myHeight -spectrum[i]*myHeight;
+
+            // draw a rectangle to each spectrum bar
+            //p.drawRect(QRectF(QPointF(p1x,p1y+barWidth/2),QPointF(p2x,myHeight+barWidth/2)));
+            QPainterPath path;
+            path.moveTo(p1x,p1y);
+            path.lineTo(p2x,p1y);
+            path.cubicTo(QPointF(p1x,p1y),QPointF(p2x,myHeight),QPointF(p1x,p1y));
+
+
+            p.drawPath(path);
+        }
+    }
+    // draw two small red bars in a black background
+    // at the bottom to draw left and right audio bars
+
+    p.setBrush(Qt::black);
+    p.drawRect(0,height()-7,width(),7);
+
+    p.setBrush(barColor);
+
+
+    // left level bar
+    p.drawRoundedRect(width()/2*(1-leftLevel),height()-6,width()/2*leftLevel,6,3,3);
+
+    // right level bar
+    p.drawRoundedRect(width()/2,height()-6,width()/2*rightLevel,6,3,3);
+}
+
+// load new fft samples to be displayed
+// only NUM_BANDS are selected since we may not want
+// to display all those bars
+void Spectrograph::loadSamples(QVector<double> &_spectrum){
+    int incr;
+
+    // copy the spectrum
+    incr = _spectrum.size()/NUM_BANDS;
+    for(int i=0; i<NUM_BANDS; i++){
+        spectrum[i] = _spectrum[i*incr];
+    }
+
+    // repaint the widget with the new spectrum
+    repaint();
+}
