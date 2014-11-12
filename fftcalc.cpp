@@ -11,7 +11,6 @@ FFTCalc::FFTCalc(QObject *parent)
   // so it cannot overload the main thread
   processor.moveToThread(&processorThread);
 
-
   qRegisterMetaType< QVector<double> >("QVector<double>");
   connect(&processor, SIGNAL(calculatedSpectrum(QVector<double>)), SLOT(setSpectrum(QVector<double>)));
   connect(&processor, SIGNAL(allDone()),SLOT(freeCalc()));
