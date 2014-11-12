@@ -55,6 +55,7 @@ void MediaLibrary::onSelectItem(QModelIndex index){
   if(index.model()->hasChildren(index))
     return;
   path = index.parent().child(index.row(),1).data().toString();
+#ifdef USE_TAGLIB
   TagLib::FileRef ref(path.toStdString().c_str());
   if(!ref.isNull() && ref.tag()){
     tag=ref.tag();
@@ -73,6 +74,7 @@ void MediaLibrary::onSelectItem(QModelIndex index){
       setTableTag("Titulo",title);
     }
   }
+#endif
 }
 
 void MediaLibrary::setTableTag(QString property, QString value){
@@ -141,6 +143,7 @@ void MediaLibrary::searchPath(QString path){
     QString sSubdir = stack.pop();
     QDir subdir(sSubdir);
 
+#ifdef USE_TAGLIB
     // Check for the files.
     QStringList entries = subdir.entryList(QStringList() << "*mp3" << "*flac", QDir::Files);
     for (int i = 0; i < entries.size(); i++) {
@@ -192,7 +195,7 @@ void MediaLibrary::searchPath(QString path){
         }
       }
     }
-
+#endif
     QFileInfoList infoEntries = subdir.entryInfoList(QStringList(),
                                                      QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
     for (int i = 0; i < infoEntries.size(); i++) {

@@ -1,6 +1,8 @@
 #ifndef MEDIALIBRARY_H
 #define MEDIALIBRARY_H
 
+//#define USE_TAGLIB
+
 #include <QWidget>
 #include <QFileSystemModel>
 #include <QTreeView>
@@ -10,8 +12,11 @@
 #include <QDir>
 #include <QMediaPlayer>
 #include <QString>
+
+#ifdef USE_TAGLIB
 #include <taglib/fileref.h>
 #include <taglib/tag.h>
+#endif
 namespace Ui {
 class MediaLibrary;
 }
@@ -27,8 +32,10 @@ public:
 private:
   Ui::MediaLibrary *ui;
   QMediaPlayer *auxplayer;
+#ifdef USE_TAGLIB
   TagLib::FileRef fileref;
   TagLib::Tag *tag;
+#endif
   QStandardItemModel *treeModel, *tableModel;
   QStandardItem* searchArtist(QString artist);
   QStandardItem *searchAlbum(QStandardItem *artistItem, QString album);

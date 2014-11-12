@@ -29,5 +29,3 @@ void MediaInfo::setAtribute(QString property, QString value){
     ui->labelAudioCodec->setText(value);
 }
 
-void MediaInfo::loadArt(void){
-}

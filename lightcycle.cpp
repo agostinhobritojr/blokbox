@@ -6,7 +6,7 @@ LightCycle::LightCycle(QWidget *parent) :
   pixmap = QPixmap(800,SEGMENT_HEIGHT);
   image = pixmap.toImage();
   column.resize(SEGMENT_HEIGHT);
-  startTimer(80);
+  startTimer(100);
   startColumn=0;
   setText("----");
   ncols=1;
@@ -110,11 +110,11 @@ void LightCycle::paintEvent(QPaintEvent *e){
    // qDebug() << "index=" << index << "/" << matrix.size();
     for(int j=0; j<SEGMENT_HEIGHT; j++){
       if(matrix[index][j] == true){
-        p.setBrush(Qt::red);
+        p.setBrush(Qt::blue);
         p.drawEllipse(lightDiameter*i,lightDiameter*j,lightDiameter,lightDiameter);
       }
       else{
-        p.setBrush(Qt::gray);
+        p.setBrush(Qt::lightGray);
         p.drawEllipse(lightDiameter*i,lightDiameter*j,lightDiameter,lightDiameter);
       }
     }

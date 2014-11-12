@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>742</width>
-    <height>108</height>
+    <width>836</width>
+    <height>198</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -59,7 +59,7 @@ border-radius: 8px;
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QSlider" name="verticalSliderVolume">
+        <widget class="QSlider" name="horizontalSliderVolume">
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -216,8 +216,8 @@ color:red;
    <slot>onPrevClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>691</x>
-     <y>52</y>
+     <x>741</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel">
      <x>736</x>
@@ -232,8 +232,8 @@ color:red;
    <slot>onPlayPauseClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>611</x>
-     <y>70</y>
+     <x>762</x>
+     <y>113</y>
     </hint>
     <hint type="destinationlabel">
      <x>464</x>
@@ -248,8 +248,8 @@ color:red;
    <slot>onNextClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>731</x>
-     <y>42</y>
+     <x>821</x>
+     <y>55</y>
     </hint>
     <hint type="destinationlabel">
      <x>568</x>
@@ -261,11 +261,11 @@ color:red;
    <sender>horizontalSliderPosition</sender>
    <signal>valueChanged(int)</signal>
    <receiver>Controls</receiver>
-   <slot>myElapsedChanged(int)</slot>
+   <slot>onElapsedChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>220</x>
-     <y>64</y>
+     <x>496</x>
+     <y>106</y>
     </hint>
     <hint type="destinationlabel">
      <x>229</x>
@@ -274,14 +274,14 @@ color:red;
    </hints>
   </connection>
   <connection>
-   <sender>verticalSliderVolume</sender>
+   <sender>horizontalSliderVolume</sender>
    <signal>valueChanged(int)</signal>
    <receiver>Controls</receiver>
    <slot>onVolumeChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>85</y>
+     <x>120</x>
+     <y>106</y>
     </hint>
     <hint type="destinationlabel">
      <x>141</x>
@@ -296,6 +296,7 @@ color:red;
   <slot>onStopClicked()</slot>
   <slot>onNextClicked()</slot>
   <slot>onPrevClicked()</slot>
-  <slot>myElapsedChanged(int)</slot>
+  <slot>onElapsedChanged(qint64)</slot>
+  <slot>onElapsedChanged(int)</slot>
  </slots>
 </ui>

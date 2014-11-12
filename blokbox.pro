@@ -45,4 +45,11 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     resources.qrc
 
+
+# If you does have taglig installed on your system you should comment
+# the following lines
 LIBS += -ltag
+DEFINES += USE_TAGLIB
+
+# If you are brave, try the following link...
+# http://joelverhagen.com/blog/2010/11/how-to-compile-taglib-on-windows/
