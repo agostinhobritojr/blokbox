@@ -155,7 +155,6 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->actionLoadDirectory,SIGNAL(triggered()),this,SLOT(onAddFolderToLibrary()));
 }
 
-// what to do when user select a new song to play
 void MainWindow::goToItem(const QModelIndex &index){
   if (index.isValid()) {
     playlist->setCurrentIndex(index.row());
@@ -289,7 +288,6 @@ MainWindow::~MainWindow(){
   delete ui;
 }
 
-// load a new media selected by the user
 void MainWindow::loadMedia(){
   // mime database to detect file type
   QMimeDatabase db;
@@ -369,6 +367,8 @@ void MainWindow::metaDataAvailableChanged(bool flag){
 
 // and now the linux one
 // display the song info
+// void QMediaObject::metaDataChanged(const QString & key, const QVariant & value) [signal]
+
 void MainWindow::metaDataChanged(){
   if(player->isMetaDataAvailable()){
     ui->widgetInfo->setAtribute("AlbumArtist",player->metaData("AlbumArtist").toString());

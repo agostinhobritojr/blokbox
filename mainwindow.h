@@ -25,99 +25,142 @@
 #include <QUrl>
 #include <QVector>
 
-
+// mainwindow uses a fft calculator and a playlist model for displaying the playlist
 #include "fftcalc.h"
 #include "playlistmodel.h"
 
+/**
+ * @brief This is the namespace that defines the mainwindow ui widget.
+ * This is not the MainWindow class that is defined in this file
+ */
 namespace Ui {
 class MainWindow;
 }
 
-// the MainWindow class is used to manage with all stuff
-// fft, audio probing, widget properties
-
+// the MainWindow class
+/**
+ * @brief The MainWindow class is the conductor of this player.
+ * @details The MainWindow class is used to manage with all stuff
+ * fft, audio probing, widget properties.
+ */
 class MainWindow : public QMainWindow{
-    Q_OBJECT
-    
+  Q_OBJECT
+
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+  /**
+   * @brief MainWindow is the class constructor. It prepares the
+   * whole player for full operation
+   * @param parent
+   */
+  explicit MainWindow(QWidget *parent = 0);
+  ~MainWindow();
 
 public slots:
-  //
-  // see description on mainwindow.h
-  //
-    void goToItem(const QModelIndex &index);
-    void loadMedia();
-    void loadPlaylist();
-    void onAddFolderToLibrary();
-    void onAddMediaToPlayList(QString media);
-    void mediaStatusChanged(QMediaPlayer::MediaStatus status);
-    void metaDataChanged();
-    void next();
-    void playPause();
-    void slotPositionChanged(qint64 e);
-    void prev();
-    void processBuffer(QAudioBuffer buffer);
-    void setMediaAt(qint32 percent);
-    void setVolume(int volume);
-    void spectrumAvailable(QVector<double> spectrum);
-    void metaDataAvailableChanged(bool);
+  // what to do when user select a new song to play
+  /**
+   * @brief goToItem tells the player to play the selected song on the playlist
+   * @param index stores the index of the song
+   */
+  void goToItem(const QModelIndex &index);
+
+  /**
+   * @brief loadMedia allows the user to load a new file for playing
+   */
+  void loadMedia();
+  /**
+   * @brief loadPlaylist should prepare the playlist
+   * @details nothing here yet
+   */
+  void loadPlaylist();
+  /**
+   * @brief mediaStatusChanged is activated when the media on player changes
+   * @details It is used to communicate the song duration has changed
+   * @param status is not used here
+   */
+  void mediaStatusChanged(QMediaPlayer::MediaStatus status);
+  /**
+   * @brief metaDataChanged is activated every time a given metadata changes
+   * on player
+   * @details Metadata are used to store on song files information such as
+   * artist, song title, album title, year etc.
+   */
+  void metaDataChanged();
+  /**
+   * @brief next is activated every time user select the "next" song
+   * to be played
+   */
+  void next();
+  /**
+   * @brief onAddFolderToLibrary allows the user to insert a whole folder
+   * on its audio library.
+   * @details A library component is specially crafted to deal with library
+   * manipulation details
+   */
+  void onAddFolderToLibrary();
+  void onAddMediaToPlayList(QString media);
+  void playPause();
+  void prev();
+  void processBuffer(QAudioBuffer buffer);
+  void setMediaAt(qint32 percent);
+  void setVolume(int volume);
+  void slotPositionChanged(qint64 e);
+  void spectrumAvailable(QVector<double> spectrum);
+
 private:
-    // User interface widget
-    Ui::MainWindow *ui;
+  // User interface widget
+  Ui::MainWindow *ui;
 
-    // pointer to the media player object
-    QMediaPlayer *player;
+  // pointer to the media player object
+  QMediaPlayer *player;
 
-    // stores the playlist
-    QMediaPlaylist *playlist;
+  // stores the playlist
+  QMediaPlaylist *playlist;
 
-    // audio info... we do not use it
-    QAudioDeviceInfo audioInfo;
+  // audio info... we do not use it
+  QAudioDeviceInfo audioInfo;
 
-    // a buffer to copy audio into it
-    QByteArray buffer;
+  // a buffer to copy audio into it
+  QByteArray buffer;
 
-    // the audio prober
-    QAudioProbe *probe;
+  // the audio prober
+  QAudioProbe *probe;
 
-    // a fft calculator object
-    FFTCalc *calculator;
+  // a fft calculator object
+  FFTCalc *calculator;
 
-    // item model to design the playlist into mainwindow
-    QStandardItemModel *model;
+  // item model to design the playlist into mainwindow
+  QStandardItemModel *model;
 
-    // each item to be displayed in playlist
-    QStandardItem *item;
+  // each item to be displayed in playlist
+  QStandardItem *item;
 
-    // input sample to fft calc
-    QVector<double> sample;
+  // input sample to fft calc
+  QVector<double> sample;
 
-    // output vector with spectrum
-    QVector<double> spectrum;
+  // output vector with spectrum
+  QVector<double> spectrum;
 
-    PlaylistModel *playlistModel;
+  PlaylistModel *playlistModel;
 
-    // left and right mean levels
-    double levelLeft, levelRight;
+  // left and right mean levels
+  double levelLeft, levelRight;
 signals:
-    // telle a new buffer from audio prober
-    int spectrumChanged(QVector<double> &sample);
+  // telle a new buffer from audio prober
+  int spectrumChanged(QVector<double> &sample);
 
-    // music position changed by user. Tell
-    // new position to the player
-    int positionChanged(qint64 position);
+  // music position changed by user. Tell
+  // new position to the player
+  int positionChanged(qint64 position);
 
-    // tells the new left and right mean audio levels
-    int levels(double left, double right);
+  // tells the new left and right mean audio levels
+  int levels(double left, double right);
 
-    // tells the duration of media
-    // when a new media is played
-    int elapsedTimeChanged(qint64 elapsed);
+  // tells the duration of media
+  // when a new media is played
+  int elapsedTimeChanged(qint64 elapsed);
 
-    // tells there are new directories to be added to the music library
-    int addFolderToLibrary(QString folder);
+  // tells there are new directories to be added to the music library
+  int addFolderToLibrary(QString folder);
 
 protected slots:
 };
