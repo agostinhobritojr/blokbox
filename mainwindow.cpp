@@ -155,7 +155,6 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->actionLoadDirectory,SIGNAL(triggered()),this,SLOT(onAddFolderToLibrary()));
 }
 
-// what to do when user select a new song to play
 void MainWindow::goToItem(const QModelIndex &index){
   if (index.isValid()) {
     playlist->setCurrentIndex(index.row());
@@ -288,7 +287,6 @@ MainWindow::~MainWindow(){
   delete ui;
 }
 
-// load a new media selected by the user
 void MainWindow::loadMedia(){
   // mime database to detect file type
   QMimeDatabase db;
@@ -349,21 +347,6 @@ void MainWindow::slotPositionChanged(qint64 e){
 void MainWindow::mediaStatusChanged(QMediaPlayer::MediaStatus status){
   Q_UNUSED(status);
   ui->control->onDurationChanged(player->duration());
-}
-
-// this is for windows compilations
-// display the song info
-void MainWindow::metaDataAvailableChanged(bool flag){
-  Q_UNUSED(flag);
-  /*
-  qDebug() << "metadata";
-  ui->widgetInfo->setAtribute("AlbumArtist",player->metaData("AlbumArtist").toString());
-  ui->widgetInfo->setAtribute("Title",player->metaData("Title").toString());
-  ui->widgetInfo->setAtribute("AlbumTitle",player->metaData("AlbumTitle").toString());
-  ui->widgetInfo->setAtribute("TrackNumber",player->metaData("TrackNumber").toString());
-  ui->widgetInfo->setAtribute("AudioBitRate",player->metaData("AudioBitRate").toString());
-  ui->widgetInfo->setAtribute("AudioCodec",player->metaData("AudioCodec").toString());
-  */
 }
 
 // and now the linux one

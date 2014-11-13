@@ -64,13 +64,20 @@ public slots:
   void goToItem(const QModelIndex &index);
 
   /**
-   * @brief loadMedia allows the user to oad a new media selected by the user
-
+   * @brief loadMedia allows the user to load a new file for playing
    */
   void loadMedia();
+  /**
+   * @brief loadPlaylist should prepare the playlist
+   * @details nothing here yet
+   */
   void loadPlaylist();
+  /**
+   * @brief mediaStatusChanged is activated when the media on player changes
+   * @details It is used to communicate the song duration has changed
+   * @param status is not used here
+   */
   void mediaStatusChanged(QMediaPlayer::MediaStatus status);
-  void metaDataAvailableChanged(bool);
   void metaDataChanged();
   void next();
   void onAddFolderToLibrary();
