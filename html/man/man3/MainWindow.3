@@ -1,0 +1,223 @@
+.TH "MainWindow" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MainWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mainwindow\&.h>\fP
+.PP
+Inherits QMainWindow\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBgoToItem\fP (const QModelIndex &index)"
+.br
+.ti -1c
+.RI "void \fBloadMedia\fP ()"
+.br
+.ti -1c
+.RI "void \fBloadPlaylist\fP ()"
+.br
+.ti -1c
+.RI "void \fBonAddFolderToLibrary\fP ()"
+.br
+.ti -1c
+.RI "void \fBonAddMediaToPlayList\fP (QString media)"
+.br
+.ti -1c
+.RI "void \fBmediaStatusChanged\fP (QMediaPlayer::MediaStatus status)"
+.br
+.ti -1c
+.RI "void \fBmetaDataChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBnext\fP ()"
+.br
+.ti -1c
+.RI "void \fBplayPause\fP ()"
+.br
+.ti -1c
+.RI "void \fBslotPositionChanged\fP (qint64 e)"
+.br
+.ti -1c
+.RI "void \fBprev\fP ()"
+.br
+.ti -1c
+.RI "void \fBprocessBuffer\fP (QAudioBuffer \fBbuffer\fP)"
+.br
+.ti -1c
+.RI "void \fBsetMediaAt\fP (qint32 percent)"
+.br
+.ti -1c
+.RI "void \fBsetVolume\fP (int volume)"
+.br
+.ti -1c
+.RI "void \fBspectrumAvailable\fP (QVector< double > \fBspectrum\fP)"
+.br
+.ti -1c
+.RI "void \fBmetaDataAvailableChanged\fP (bool)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "int \fBspectrumChanged\fP (QVector< double > &\fBsample\fP)"
+.br
+.ti -1c
+.RI "int \fBpositionChanged\fP (qint64 position)"
+.br
+.ti -1c
+.RI "int \fBlevels\fP (double left, double right)"
+.br
+.ti -1c
+.RI "int \fBelapsedTimeChanged\fP (qint64 elapsed)"
+.br
+.ti -1c
+.RI "int \fBaddFolderToLibrary\fP (QString folder)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMainWindow\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "\fB~MainWindow\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::MainWindow * \fBui\fP"
+.br
+.ti -1c
+.RI "QMediaPlayer * \fBplayer\fP"
+.br
+.ti -1c
+.RI "QMediaPlaylist * \fBplaylist\fP"
+.br
+.ti -1c
+.RI "QAudioDeviceInfo \fBaudioInfo\fP"
+.br
+.ti -1c
+.RI "QByteArray \fBbuffer\fP"
+.br
+.ti -1c
+.RI "QAudioProbe * \fBprobe\fP"
+.br
+.ti -1c
+.RI "\fBFFTCalc\fP * \fBcalculator\fP"
+.br
+.ti -1c
+.RI "QStandardItemModel * \fBmodel\fP"
+.br
+.ti -1c
+.RI "QStandardItem * \fBitem\fP"
+.br
+.ti -1c
+.RI "QVector< double > \fBsample\fP"
+.br
+.ti -1c
+.RI "QVector< double > \fBspectrum\fP"
+.br
+.ti -1c
+.RI "\fBPlaylistModel\fP * \fBplaylistModel\fP"
+.br
+.ti -1c
+.RI "double \fBlevelLeft\fP"
+.br
+.ti -1c
+.RI "double \fBlevelRight\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MainWindow::MainWindow (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+
+.SS "MainWindow::~MainWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int MainWindow::addFolderToLibrary (QStringfolder)\fC [signal]\fP"
+
+.SS "int MainWindow::elapsedTimeChanged (qint64elapsed)\fC [signal]\fP"
+
+.SS "void MainWindow::goToItem (const QModelIndex &index)\fC [slot]\fP"
+
+.SS "int MainWindow::levels (doubleleft, doubleright)\fC [signal]\fP"
+
+.SS "void MainWindow::loadMedia ()\fC [slot]\fP"
+
+.SS "void MainWindow::loadPlaylist (void)\fC [slot]\fP"
+
+.SS "void MainWindow::mediaStatusChanged (QMediaPlayer::MediaStatusstatus)\fC [slot]\fP"
+
+.SS "void MainWindow::metaDataAvailableChanged (boolflag)\fC [slot]\fP"
+
+.SS "void MainWindow::metaDataChanged ()\fC [slot]\fP"
+
+.SS "void MainWindow::next ()\fC [slot]\fP"
+
+.SS "void MainWindow::onAddFolderToLibrary ()\fC [slot]\fP"
+
+.SS "void MainWindow::onAddMediaToPlayList (QStringmedia)\fC [slot]\fP"
+
+.SS "void MainWindow::playPause ()\fC [slot]\fP"
+
+.SS "int MainWindow::positionChanged (qint64position)\fC [signal]\fP"
+
+.SS "void MainWindow::prev ()\fC [slot]\fP"
+
+.SS "void MainWindow::processBuffer (QAudioBufferbuffer)\fC [slot]\fP"
+
+.SS "void MainWindow::setMediaAt (qint32percent)\fC [slot]\fP"
+
+.SS "void MainWindow::setVolume (intvolume)\fC [slot]\fP"
+
+.SS "void MainWindow::slotPositionChanged (qint64e)\fC [slot]\fP"
+
+.SS "void MainWindow::spectrumAvailable (QVector< double >spectrum)\fC [slot]\fP"
+
+.SS "int MainWindow::spectrumChanged (QVector< double > &sample)\fC [signal]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QAudioDeviceInfo MainWindow::audioInfo\fC [private]\fP"
+
+.SS "QByteArray MainWindow::buffer\fC [private]\fP"
+
+.SS "\fBFFTCalc\fP* MainWindow::calculator\fC [private]\fP"
+
+.SS "QStandardItem* MainWindow::item\fC [private]\fP"
+
+.SS "double MainWindow::levelLeft\fC [private]\fP"
+
+.SS "double MainWindow::levelRight\fC [private]\fP"
+
+.SS "QStandardItemModel* MainWindow::model\fC [private]\fP"
+
+.SS "QMediaPlayer* MainWindow::player\fC [private]\fP"
+
+.SS "QMediaPlaylist* MainWindow::playlist\fC [private]\fP"
+
+.SS "\fBPlaylistModel\fP* MainWindow::playlistModel\fC [private]\fP"
+
+.SS "QAudioProbe* MainWindow::probe\fC [private]\fP"
+
+.SS "QVector<double> MainWindow::sample\fC [private]\fP"
+
+.SS "QVector<double> MainWindow::spectrum\fC [private]\fP"
+
+.SS "Ui::MainWindow* MainWindow::ui\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

@@ -1,0 +1,206 @@
+.TH "BufferProcessor" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BufferProcessor \- 
+.PP
+The \fBBufferProcessor\fP class is designed to process audio buffers sent by mainwindow\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <fftcalc\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBprocessBuffer\fP (QVector< double > _array, int duration)"
+.br
+.RI "\fIprocessBuffer is the invoked every time a new audio buffer arrives on mainwindow \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBcalculatedSpectrum\fP (QVector< double > \fBspectrum\fP)"
+.br
+.RI "\fIcalculatedSpectrum is emitted every time a new spectrum is available for displaying \fP"
+.ti -1c
+.RI "void \fBallDone\fP (void)"
+.br
+.RI "\fIallDone signal is emmited when all chunks has been processed \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBufferProcessor\fP (QObject *parent=0)"
+.br
+.ti -1c
+.RI "\fB~BufferProcessor\fP ()"
+.br
+.ti -1c
+.RI "void \fBcalc\fP (QVector< double > &_array, int duration)"
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.RI "\fIrun is called each interval ms to perform FFT calculation of a given chunk \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QVector< double > \fBarray\fP"
+.br
+.RI "\fIarray stores local audio buffer passed for processing \fP"
+.ti -1c
+.RI "QVector< double > \fBwindow\fP"
+.br
+.ti -1c
+.RI "QVector< double > \fBspectrum\fP"
+.br
+.RI "\fIthe fourier spectrum \fP"
+.ti -1c
+.RI "QVector< double > \fBlogscale\fP"
+.br
+.RI "\fIa logarithmic scale to prepare spectrum storage \fP"
+.ti -1c
+.RI "QTimer * \fBtimer\fP"
+.br
+.RI "\fIthis timer tells when to calc each spectrum \fP"
+.ti -1c
+.RI "bool \fBcompressed\fP"
+.br
+.RI "\fIdefines is spectrum is compressed (logarithmic u scale) \fP"
+.ti -1c
+.RI "bool \fBrunning\fP"
+.br
+.RI "\fItells if fft is running \fP"
+.ti -1c
+.RI "int \fBnumberOfChunks\fP"
+.br
+.RI "\fIstores the number of chunks \fP"
+.ti -1c
+.RI "int \fBinterval\fP"
+.br
+.RI "\fIstores interval for send each chunk for spectrum calculation \fP"
+.ti -1c
+.RI "int \fBpass\fP"
+.br
+.RI "\fIcounts the number of passes until chunkNumber is reached \fP"
+.ti -1c
+.RI "\fBCArray\fP \fBcomplexFrame\fP"
+.br
+.RI "\fIstores the chunk to be sent for fft calculations \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBBufferProcessor\fP class is designed to process audio buffers sent by mainwindow\&. 
+
+We observed that using the Qt version at the time of development of this code the audiobuffer size changes with different songs and with different operating systems\&.
+.PP
+Some of the experiments, audio buffer duration changed from 6ms to 1s, as well as sample size\&. Therefore, we decide to split the sample in chuncks of 512 elements each
+.PP
+numberOfChunks = buffer_size/SPECSIZE
+.PP
+and calculate chunck duration based on the buffer duration as
+.PP
+interval = duration/numberOfChunks 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BufferProcessor::BufferProcessor (QObject *parent = \fC0\fP)\fC [explicit]\fP"
+
+.SS "BufferProcessor::~BufferProcessor ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void BufferProcessor::allDone (void)\fC [signal]\fP"
+
+.PP
+allDone signal is emmited when all chunks has been processed 
+.SS "void BufferProcessor::calc (QVector< double > &_array, intduration)"
+
+.SS "void BufferProcessor::calculatedSpectrum (QVector< double >spectrum)\fC [signal]\fP"
+
+.PP
+calculatedSpectrum is emitted every time a new spectrum is available for displaying every interval ms, a timer sends a new chunk for calculate its fft\&. When it is available, we can send a signal containing the spectrum array 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIspectrum\fP stores the fft spectrum array in double format 
+.RE
+.PP
+
+.SS "void BufferProcessor::processBuffer (QVector< double >_array, intduration)\fC [slot]\fP"
+
+.PP
+processBuffer is the invoked every time a new audio buffer arrives on mainwindow 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_array\fP is a copy of the audio buffer 
+.br
+\fIduration\fP stores how many milliseconds this buffer takes to play 
+.RE
+.PP
+
+.SS "void BufferProcessor::run ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+run is called each interval ms to perform FFT calculation of a given chunk 
+.SH "Member Data Documentation"
+.PP 
+.SS "QVector<double> BufferProcessor::array\fC [private]\fP"
+
+.PP
+array stores local audio buffer passed for processing 
+.SS "\fBCArray\fP BufferProcessor::complexFrame\fC [private]\fP"
+
+.PP
+stores the chunk to be sent for fft calculations 
+.SS "bool BufferProcessor::compressed\fC [private]\fP"
+
+.PP
+defines is spectrum is compressed (logarithmic u scale) 
+.SS "int BufferProcessor::interval\fC [private]\fP"
+
+.PP
+stores interval for send each chunk for spectrum calculation 
+.SS "QVector<double> BufferProcessor::logscale\fC [private]\fP"
+
+.PP
+a logarithmic scale to prepare spectrum storage 
+.SS "int BufferProcessor::numberOfChunks\fC [private]\fP"
+
+.PP
+stores the number of chunks 
+.SS "int BufferProcessor::pass\fC [private]\fP"
+
+.PP
+counts the number of passes until chunkNumber is reached 
+.SS "bool BufferProcessor::running\fC [private]\fP"
+
+.PP
+tells if fft is running 
+.SS "QVector<double> BufferProcessor::spectrum\fC [private]\fP"
+
+.PP
+the fourier spectrum 
+.SS "QTimer* BufferProcessor::timer\fC [private]\fP"
+
+.PP
+this timer tells when to calc each spectrum 
+.SS "QVector<double> BufferProcessor::window\fC [private]\fP"
+window stores a window function\&. Windowing is used to produce better shaped Fourier spectra 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

@@ -1,0 +1,208 @@
+.TH "Controls" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Controls \- 
+.PP
+The \fBControls\fP class provides support to user control\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <controls\&.h>\fP
+.PP
+Inherits \fBAbstractControl\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBonPlayPauseClicked\fP (void)"
+.br
+.RI "\fIonPlayPauseClicked is activated when the user presses the play/pause button \fP"
+.ti -1c
+.RI "void \fBonPrevClicked\fP (void)"
+.br
+.RI "\fIonPrevClicked is activated when the user presses prev button \fP"
+.ti -1c
+.RI "void \fBonNextClicked\fP (void)"
+.br
+.RI "\fIonNextClicked is activated when the user presses next button \fP"
+.ti -1c
+.RI "void \fBonVolumeChanged\fP (int value)"
+.br
+.RI "\fIonVolumeChanged is activated when the user turns the dial button \fP"
+.ti -1c
+.RI "void \fBonElapsedChanged\fP (qint64 value)"
+.br
+.RI "\fIonElapsedChanged is signal activated periodically by mainwindow widget \fP"
+.ti -1c
+.RI "void \fBonDurationChanged\fP (qint64 value)"
+.br
+.RI "\fIonDurationChanged slot is called when a new media arives from the playlist \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBplayPause\fP ()"
+.br
+.RI "\fIplayPause is emitted when the user presses the play/pause button \fP"
+.ti -1c
+.RI "void \fBnext\fP ()"
+.br
+.RI "\fInext signal is emitted when the user presses next button \fP"
+.ti -1c
+.RI "void \fBprev\fP ()"
+.br
+.RI "\fIprev signal is emitted when the user presses prev button \fP"
+.ti -1c
+.RI "void \fBvolumeSelected\fP (int)"
+.br
+.RI "\fIvolumeSelected signal is emitted when the user selects a new volume \fP"
+.ti -1c
+.RI "void \fBelapsedSelected\fP (qint64)"
+.br
+.RI "\fIelapsedSelected tells qt which part of the song the user selected to play \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBControls\fP (QWidget *parent=0)"
+.br
+.RI "\fIClass constructor\&. \fP"
+.ti -1c
+.RI "\fB~Controls\fP ()"
+.br
+.RI "\fIClass destructor, to clean up some mess\&. \fP"
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBonSliderReleased\fP ()"
+.br
+.RI "\fIonSliderReleased is called when the user releases the duration slider \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::Controls * \fBui\fP"
+.br
+.RI "\fIui access the form that draws the controls user interface \fP"
+.ti -1c
+.RI "qint64 \fBduration\fP"
+.br
+.RI "\fIduration stores the total amount of time of current media that is playing \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBControls\fP class provides support to user control\&. 
+
+This class allows to programm the interface for dealing with play/pause/prev/next/volume/elapsed time commands 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Controls::Controls (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP is the pointer to parent widget (it is supposed to be the place where this widget has to be drawn) 
+.RE
+.PP
+
+.SS "Controls::~Controls ()"
+
+.PP
+Class destructor, to clean up some mess\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Controls::elapsedSelected (qint64)\fC [signal]\fP"
+
+.PP
+elapsedSelected tells qt which part of the song the user selected to play 
+.SS "void Controls::next ()\fC [signal]\fP"
+
+.PP
+next signal is emitted when the user presses next button 
+.SS "void Controls::onDurationChanged (qint64value)\fC [slot]\fP"
+
+.PP
+onDurationChanged slot is called when a new media arives from the playlist When a new media starts to play, mainwindow tells this widget the total amount of time associated to this media\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP stores the amount of time for the current media 
+.RE
+.PP
+
+.SS "void Controls::onElapsedChanged (qint64value)\fC [slot]\fP"
+
+.PP
+onElapsedChanged is signal activated periodically by mainwindow widget every a new part of the song is played, the stream position changes\&. This position is comunicated to controls widget using some specific signal\&.
+.PP
+We need two overloaded function, since the scrollbar widget only deals with integer values and the signal provided by media player offers a 64 bits integer :p 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP receives the elapsed time 
+.RE
+.PP
+
+.SS "void Controls::onNextClicked (void)\fC [slot]\fP"
+
+.PP
+onNextClicked is activated when the user presses next button 
+.SS "void Controls::onPlayPauseClicked (void)\fC [slot]\fP"
+
+.PP
+onPlayPauseClicked is activated when the user presses the play/pause button 
+.SS "void Controls::onPrevClicked (void)\fC [slot]\fP"
+
+.PP
+onPrevClicked is activated when the user presses prev button 
+.SS "void Controls::onSliderReleased ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+onSliderReleased is called when the user releases the duration slider When this slider is released, the widget tells mainwindow that user selected a new part of the song to play\&. 
+.SS "void Controls::onVolumeChanged (intvalue)\fC [slot]\fP"
+
+.PP
+onVolumeChanged is activated when the user turns the dial button 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP is passed to this function by some valueChanged signal 
+.RE
+.PP
+
+.SS "void Controls::playPause ()\fC [signal]\fP"
+
+.PP
+playPause is emitted when the user presses the play/pause button 
+.SS "void Controls::prev ()\fC [signal]\fP"
+
+.PP
+prev signal is emitted when the user presses prev button 
+.SS "void Controls::volumeSelected (int)\fC [signal]\fP"
+
+.PP
+volumeSelected signal is emitted when the user selects a new volume 
+.SH "Member Data Documentation"
+.PP 
+.SS "qint64 Controls::duration\fC [private]\fP"
+
+.PP
+duration stores the total amount of time of current media that is playing 
+.SS "Ui::Controls* Controls::ui\fC [private]\fP"
+
+.PP
+ui access the form that draws the controls user interface 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

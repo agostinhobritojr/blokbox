@@ -1,0 +1,75 @@
+.TH "AbstractMediaInfo" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AbstractMediaInfo \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <abstractmediainfo\&.h>\fP
+.PP
+Inherits QWidget\&.
+.PP
+Inherited by \fBMediaInfo\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetAtribute\fP (QString property, QString value)=0"
+.br
+.RI "\fIsetAtribute receives a pair property/value from mainwindow widget \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractMediaInfo\fP (QWidget *parent=0)"
+.br
+.RI "\fI\fBAbstractMediaInfo\fP constructor only inform the widget who is its parent\&. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AbstractMediaInfo::AbstractMediaInfo (QWidget *parent = \fC0\fP)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+\fBAbstractMediaInfo\fP constructor only inform the widget who is its parent\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP is the pointer to parent widget (it is supposed to be the place where this widget has to be drawn) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void AbstractMediaInfo::setAtribute (QStringproperty, QStringvalue)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.PP
+setAtribute receives a pair property/value from mainwindow widget Stuff like artists, album title and music title are communicated to this slot 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproperty\fP receives a string that may hold the following values:
+.IP "\(bu" 2
+'AlbumArtist' : the album artist
+.IP "\(bu" 2
+'Title': music title
+.IP "\(bu" 2
+'AlbumTitle': album title
+.IP "\(bu" 2
+'TrackNumber': track number
+.IP "\(bu" 2
+'AudioBitRate': song bitrate
+.IP "\(bu" 2
+'AudioCodec': song codec
+.PP
+.br
+\fIvalue\fP receives the information associated to its corresponding property ex: 'AlbumArtist' <==> 'Elton Jonh' 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

@@ -1,0 +1,71 @@
+.TH "AbstractSpectrograph" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AbstractSpectrograph \- 
+.PP
+The \fBAbstractSpectrograph\fP class provides a generic interface for a spectrograph drawing widget\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <abstractspectrograph\&.h>\fP
+.PP
+Inherits QWidget\&.
+.PP
+Inherited by \fBSpectrograph\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBloadSamples\fP (QVector< double > &)=0"
+.br
+.RI "\fIloadSamples should be used to load the spectrum to be displayed \fP"
+.ti -1c
+.RI "virtual void \fBloadLevels\fP (double, double)=0"
+.br
+.RI "\fIloadLevels should be used to load left and right mean audio levels \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractSpectrograph\fP (QWidget *parent)"
+.br
+.RI "\fI\fBAbstractSpectrograph\fP constructor only inform the widget who is its parent\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBAbstractSpectrograph\fP class provides a generic interface for a spectrograph drawing widget\&. 
+
+Periodically, mainwindows calculates somewhere a FFT transform of audio input signal and extracts its spectrum\&. This spectrum may be offered to objects of subclasses of \fBAbstractSpectrograph\fP for drawing nice things
+.PP
+Moreover, left and audio mean levels are also communicated, so level bars (or something like that) can be drawn\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AbstractSpectrograph::AbstractSpectrograph (QWidget *parent)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+\fBAbstractSpectrograph\fP constructor only inform the widget who is its parent\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP is the pointer to parent widget (it is supposed to be the place where this widget has to be drawn) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void AbstractSpectrograph::loadLevels (double, double)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.PP
+loadLevels should be used to load left and right mean audio levels 
+.SS "virtual void AbstractSpectrograph::loadSamples (QVector< double > &)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.PP
+loadSamples should be used to load the spectrum to be displayed 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.
