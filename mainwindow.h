@@ -25,17 +25,24 @@
 #include <QUrl>
 #include <QVector>
 
-
+// mainwindow uses a fft calculator and a playlist model for displaying the playlist
 #include "fftcalc.h"
 #include "playlistmodel.h"
 
+/**
+ * @brief This is the namespace that defines the mainwindow ui widget.
+ * This is not the MainWindow class that is defined in this file
+ */
 namespace Ui {
 class MainWindow;
 }
 
-// the MainWindow class is used to manage with all stuff
-// fft, audio probing, widget properties
-
+// the MainWindow class
+/**
+ * @brief The MainWindow class is the conductor of this player.
+ * @details The MainWindow class is used to manage with all stuff
+ * fft, audio probing, widget properties.
+ */
 class MainWindow : public QMainWindow{
     Q_OBJECT
     
@@ -44,9 +51,8 @@ public:
     ~MainWindow();
 
 public slots:
-  //
-  // see description on mainwindow.h
-  //
+  // what to do when user select a new song to play
+
     void goToItem(const QModelIndex &index);
     void loadMedia();
     void loadPlaylist();
