@@ -70,10 +70,10 @@ BufferProcessor::~BufferProcessor(){
 void BufferProcessor::processBuffer(QVector<double> _array, int duration){
   // if the music is new, new sizes may arrive
   if(array.size() != _array.size()){
-    chunks = _array.size()/SPECSIZE;
+    numberOfChunks = _array.size()/SPECSIZE;
     array.resize(_array.size());
   }
-  interval = duration/chunks;
+  interval = duration/numberOfChunks;
   if(interval < 1)
     interval = 1;
   array = _array;
@@ -84,7 +84,7 @@ void BufferProcessor::processBuffer(QVector<double> _array, int duration){
 void BufferProcessor::run(){
   unsigned long bufferSize;
   qreal amplitude;
-  if(pass == chunks){
+  if(pass == numberOfChunks){
     emit allDone();
     return;
   }
