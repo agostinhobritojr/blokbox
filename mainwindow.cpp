@@ -349,8 +349,25 @@ void MainWindow::mediaStatusChanged(QMediaPlayer::MediaStatus status){
   ui->control->onDurationChanged(player->duration());
 }
 
+// this is for windows compilations
+// display the song info
+void MainWindow::metaDataAvailableChanged(bool flag){
+  Q_UNUSED(flag);
+  /*
+  qDebug() << "metadata";
+  ui->widgetInfo->setAtribute("AlbumArtist",player->metaData("AlbumArtist").toString());
+  ui->widgetInfo->setAtribute("Title",player->metaData("Title").toString());
+  ui->widgetInfo->setAtribute("AlbumTitle",player->metaData("AlbumTitle").toString());
+  ui->widgetInfo->setAtribute("TrackNumber",player->metaData("TrackNumber").toString());
+  ui->widgetInfo->setAtribute("AudioBitRate",player->metaData("AudioBitRate").toString());
+  ui->widgetInfo->setAtribute("AudioCodec",player->metaData("AudioCodec").toString());
+  */
+}
+
 // and now the linux one
 // display the song info
+// void QMediaObject::metaDataChanged(const QString & key, const QVariant & value) [signal]
+
 void MainWindow::metaDataChanged(){
   if(player->isMetaDataAvailable()){
     ui->widgetInfo->setAtribute("AlbumArtist",player->metaData("AlbumArtist").toString());

@@ -78,8 +78,24 @@ public slots:
    * @param status is not used here
    */
   void mediaStatusChanged(QMediaPlayer::MediaStatus status);
+  /**
+   * @brief metaDataChanged is activated every time a given metadata changes
+   * on player
+   * @details Metadata are used to store on song files information such as
+   * artist, song title, album title, year etc.
+   */
   void metaDataChanged();
+  /**
+   * @brief next is activated every time user select the "next" song
+   * to be played
+   */
   void next();
+  /**
+   * @brief onAddFolderToLibrary allows the user to insert a whole folder
+   * on its audio library.
+   * @details A library component is specially crafted to deal with library
+   * manipulation details
+   */
   void onAddFolderToLibrary();
   void onAddMediaToPlayList(QString media);
   void playPause();
