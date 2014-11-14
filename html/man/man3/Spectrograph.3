@@ -1,0 +1,266 @@
+.TH "Spectrograph" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Spectrograph \- 
+.PP
+The \fBSpectrograph\fP class is used to draw the fourier spectrum on the screen\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <spectrograph\&.h>\fP
+.PP
+Inherits \fBAbstractSpectrograph\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBpaintEvent\fP (QPaintEvent *e)"
+.br
+.RI "\fIPaints the screen for spectrum displaing\&. \fP"
+.ti -1c
+.RI "void \fBloadSamples\fP (QVector< double > &_spectrum)"
+.br
+.RI "\fIThis method decides what to do when a new spectrum sample has arrived\&.  This method is called periodically by mainwindow every time a new spectrum is calculated\&. the _spectrum array reference stores double values within the range [0,1] and it has 256 elements\&. \fP"
+.ti -1c
+.RI "void \fBtimerEvent\fP (QTimerEvent *e)"
+.br
+.RI "\fIUsed to modify spectrum while a new sample does not arrive\&. \fP"
+.ti -1c
+.RI "void \fBresizeEvent\fP (QResizeEvent *e)"
+.br
+.RI "\fIWhat to do when widget size changes\&. \fP"
+.ti -1c
+.RI "void \fBloadLevels\fP (double left, double right)"
+.br
+.RI "\fIOpen context menu\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSpectrograph\fP (QWidget *parent=0)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QVector< int > \fBspectrum\fP"
+.br
+.RI "\fIDo some example action when user activates context menu\&. \fP"
+.ti -1c
+.RI "QVector< double > \fBnewSpectrum\fP"
+.br
+.ti -1c
+.RI "QVector< double > \fBgravity\fP"
+.br
+.ti -1c
+.RI "QVector< int > \fBdecay\fP"
+.br
+.ti -1c
+.RI "int \fBdecayIncr\fP"
+.br
+.ti -1c
+.RI "QVector< int > \fBdelay\fP [2]"
+.br
+.RI "\fIStores the delay for decay bars to simulate gravity\&. \fP"
+.ti -1c
+.RI "int \fBleftLevel\fP"
+.br
+.RI "\fILeft and right level bar size\&. \fP"
+.ti -1c
+.RI "int \fBrightLevel\fP"
+.br
+.ti -1c
+.RI "int \fBNUM_BANDS\fP"
+.br
+.RI "\fINumber of spectrum bands (MAX=256!!!) \fP"
+.ti -1c
+.RI "QLinearGradient \fBgradient\fP"
+.br
+.RI "\fIHolds the gradient for drawing the spectrum bars\&. \fP"
+.ti -1c
+.RI "QBrush \fBgradientBrush\fP"
+.br
+.RI "\fIBrushes for drawing the gradient and background patterns\&. \fP"
+.ti -1c
+.RI "QBrush \fBbackgroundBrush\fP"
+.br
+.ti -1c
+.RI "QBrush \fBdecayBrush\fP"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP"
+.br
+.RI "\fIA pen for drawing lines\&. \fP"
+.ti -1c
+.RI "float \fBbarSpacing\fP"
+.br
+.RI "\fISpacing between spectrum bars\&. Usually, just one pixel\&. \fP"
+.ti -1c
+.RI "float \fBbarWidth\fP"
+.br
+.ti -1c
+.RI "float \fBwidgetHeight\fP"
+.br
+.ti -1c
+.RI "float \fBaltura\fP"
+.br
+.ti -1c
+.RI "QAction * \fBacao\fP"
+.br
+.ti -1c
+.RI "double \fBtime\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSpectrograph\fP class is used to draw the fourier spectrum on the screen\&. 
+
+It periodically receives an array containing the spectrum with values scaled within the range [0,1], and the left and right mean audio values 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Spectrograph::Spectrograph (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+is the pointer to parent widget (it is supposed to be the place where this widget has to be drawn)rief Class constructor\&. Setup initial behavior for the widget 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fP 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Spectrograph::loadLevels (doubleleft, doubleright)\fC [slot]\fP"
+
+.PP
+Open context menu\&. This is what is called when user clicks on the component using mouse right button 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP This event is used to return the position of mouse click when the context menu is activated Loads mean left and right audio channel values
+.RE
+.PP
+This method is invoked by mainwindow component every time a new audio sample is processed, supplying left and right mean audio values
+.PP
+It also performs some scaling for better display purposes
+.PP
+\fBParameters:\fP
+.RS 4
+\fIleft\fP left mean audio value 
+.br
+\fIright\fP right mean audio value 
+.RE
+.PP
+
+.SS "void Spectrograph::loadSamples (QVector< double > &_spectrum)\fC [slot]\fP"
+
+.PP
+This method decides what to do when a new spectrum sample has arrived\&.  This method is called periodically by mainwindow every time a new spectrum is calculated\&. the _spectrum array reference stores double values within the range [0,1] and it has 256 elements\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_spectrum\fP stores the spectrum\&. 
+.RE
+.PP
+
+.SS "void Spectrograph::paintEvent (QPaintEvent *e)\fC [slot]\fP"
+
+.PP
+Paints the screen for spectrum displaing\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP stores information about the painting event 
+.RE
+.PP
+
+.SS "void Spectrograph::resizeEvent (QResizeEvent *e)\fC [slot]\fP"
+
+.PP
+What to do when widget size changes\&. It is used to recalculate the width of the bars and some gradient colors 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP stores information about resize event 
+.RE
+.PP
+
+.SS "void Spectrograph::timerEvent (QTimerEvent *e)\fC [slot]\fP"
+
+.PP
+Used to modify spectrum while a new sample does not arrive\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QAction* Spectrograph::acao\fC [private]\fP"
+
+.SS "float Spectrograph::altura\fC [private]\fP"
+
+.SS "QBrush Spectrograph::backgroundBrush\fC [private]\fP"
+
+.SS "float Spectrograph::barSpacing\fC [private]\fP"
+
+.PP
+Spacing between spectrum bars\&. Usually, just one pixel\&. 
+.SS "float Spectrograph::barWidth\fC [private]\fP"
+
+.SS "QVector<int> Spectrograph::decay\fC [private]\fP"
+
+.SS "QBrush Spectrograph::decayBrush\fC [private]\fP"
+
+.SS "int Spectrograph::decayIncr\fC [private]\fP"
+
+.SS "QVector<int> Spectrograph::delay[2]\fC [private]\fP"
+
+.PP
+Stores the delay for decay bars to simulate gravity\&. 
+.SS "QLinearGradient Spectrograph::gradient\fC [private]\fP"
+
+.PP
+Holds the gradient for drawing the spectrum bars\&. 
+.SS "QBrush Spectrograph::gradientBrush\fC [private]\fP"
+
+.PP
+Brushes for drawing the gradient and background patterns\&. 
+.SS "QVector<double> Spectrograph::gravity\fC [private]\fP"
+
+.SS "int Spectrograph::leftLevel\fC [private]\fP"
+
+.PP
+Left and right level bar size\&. 
+.SS "QVector<double> Spectrograph::newSpectrum\fC [private]\fP"
+
+.SS "int Spectrograph::NUM_BANDS\fC [private]\fP"
+
+.PP
+Number of spectrum bands (MAX=256!!!) 
+.SS "QPen Spectrograph::pen\fC [private]\fP"
+
+.PP
+A pen for drawing lines\&. 
+.SS "int Spectrograph::rightLevel\fC [private]\fP"
+
+.SS "QVector<int> Spectrograph::spectrum\fC [private]\fP"
+
+.PP
+Do some example action when user activates context menu\&. You can add new of such functions to allow new context menu entries Stores the fft spectrum\&.
+.PP
+spectrum is an array that should have a MAXIMUM of 256 entries\&. You should not trespass this limit 
+.SS "double Spectrograph::time\fC [private]\fP"
+
+.SS "float Spectrograph::widgetHeight\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

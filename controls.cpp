@@ -84,11 +84,6 @@ void Controls::onDurationChanged(qint64 value){
   ui->lcdNumberDuration->display(QTime(0,0).addMSecs(value).toString(QString("hh:mm:ss")));
 }
 
-// just refactoring value
-void Controls::onElapsedChanged(int value){
-  onElapsedChanged((qint64) value);
-}
-
 // elapsed time has changed
 void Controls::onElapsedChanged(qint64 value){
   // adjust the elapsed time on lcdnumber

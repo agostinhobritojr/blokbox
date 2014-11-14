@@ -1,0 +1,109 @@
+.TH "LightCycle" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LightCycle \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lightcycle\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightCycle\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "void \fBpaintEvent\fP (QPaintEvent *e)"
+.br
+.ti -1c
+.RI "void \fBsetText\fP (QString text)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtimerEvent\fP (QTimerEvent *e)"
+.br
+.ti -1c
+.RI "void \fBresizeEvent\fP (QResizeEvent *e)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPixmap \fBpixmap\fP"
+.br
+.ti -1c
+.RI "QImage \fBimage\fP"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP"
+.br
+.ti -1c
+.RI "QVector< QVector< bool > > \fBmatrix\fP"
+.br
+.ti -1c
+.RI "QVector< bool > \fBcolumn\fP"
+.br
+.ti -1c
+.RI "QVector< bool > \fBtmp\fP"
+.br
+.ti -1c
+.RI "int \fBlightDiameter\fP"
+.br
+.ti -1c
+.RI "int \fBncols\fP"
+.br
+.ti -1c
+.RI "int \fBstartColumn\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LightCycle::LightCycle (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void LightCycle::paintEvent (QPaintEvent *e)"
+
+.SS "void LightCycle::resizeEvent (QResizeEvent *e)\fC [protected]\fP"
+
+.SS "void LightCycle::setText (QStringtext)"
+
+.SS "void LightCycle::timerEvent (QTimerEvent *e)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QBrush LightCycle::brush\fC [private]\fP"
+
+.SS "QVector<bool> LightCycle::column\fC [private]\fP"
+
+.SS "QImage LightCycle::image\fC [private]\fP"
+
+.SS "int LightCycle::lightDiameter\fC [private]\fP"
+
+.SS "QVector< QVector<bool> > LightCycle::matrix\fC [private]\fP"
+
+.SS "int LightCycle::ncols\fC [private]\fP"
+
+.SS "QPen LightCycle::pen\fC [private]\fP"
+
+.SS "QPixmap LightCycle::pixmap\fC [private]\fP"
+
+.SS "int LightCycle::startColumn\fC [private]\fP"
+
+.SS "QVector<bool> LightCycle::tmp\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

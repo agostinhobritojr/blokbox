@@ -66,7 +66,6 @@ public slots:
      * @param value receives the elapsed time
      */
     void onElapsedChanged(qint64 value);
-    void onElapsedChanged(int value);
     /**
      * @brief onDurationChanged slot is called when a new media arives from the playlist
      * @details When a new media starts to play, mainwindow tells this widget the total amount

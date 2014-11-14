@@ -1,0 +1,83 @@
+.TH "FFTCalc" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FFTCalc \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <fftcalc\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetSpectrum\fP (QVector< double > spectrum)"
+.br
+.ti -1c
+.RI "void \fBfreeCalc\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBcalculatedSpectrum\fP (QVector< double > spectrum)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFFTCalc\fP (QObject *parent=0)"
+.br
+.ti -1c
+.RI "\fB~FFTCalc\fP ()"
+.br
+.ti -1c
+.RI "void \fBcalc\fP (QVector< double > &_array, int duration)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisBusy\fP"
+.br
+.ti -1c
+.RI "\fBBufferProcessor\fP \fBprocessor\fP"
+.br
+.ti -1c
+.RI "QThread \fBprocessorThread\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FFTCalc::FFTCalc (QObject *parent = \fC0\fP)\fC [explicit]\fP"
+
+.SS "FFTCalc::~FFTCalc ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void FFTCalc::calc (QVector< double > &_array, intduration)"
+
+.SS "void FFTCalc::calculatedSpectrum (QVector< double >spectrum)\fC [signal]\fP"
+
+.SS "void FFTCalc::freeCalc ()\fC [slot]\fP"
+
+.SS "void FFTCalc::setSpectrum (QVector< double >spectrum)\fC [slot]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool FFTCalc::isBusy\fC [private]\fP"
+
+.SS "\fBBufferProcessor\fP FFTCalc::processor\fC [private]\fP"
+
+.SS "QThread FFTCalc::processorThread\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

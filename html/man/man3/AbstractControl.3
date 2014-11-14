@@ -1,0 +1,99 @@
+.TH "AbstractControl" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AbstractControl \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <abstractcontrol\&.h>\fP
+.PP
+Inherits QWidget\&.
+.PP
+Inherited by \fBControls\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBonPlayPauseClicked\fP (void)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonPrevClicked\fP (void)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonNextClicked\fP (void)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonVolumeChanged\fP (int)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonElapsedChanged\fP (qint64)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonDurationChanged\fP (qint64)=0"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBplayPause\fP ()"
+.br
+.ti -1c
+.RI "void \fBnext\fP ()"
+.br
+.ti -1c
+.RI "void \fBprev\fP ()"
+.br
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.ti -1c
+.RI "void \fBvolumeSelected\fP (int)"
+.br
+.ti -1c
+.RI "void \fBelapsedSelected\fP (qint64)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractControl\fP (QWidget *parent)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AbstractControl::AbstractControl (QWidget *parent)\fC [inline]\fP, \fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void AbstractControl::elapsedSelected (qint64)\fC [signal]\fP"
+
+.SS "void AbstractControl::next ()\fC [signal]\fP"
+
+.SS "virtual void AbstractControl::onDurationChanged (qint64)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.SS "virtual void AbstractControl::onElapsedChanged (qint64)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.SS "virtual void AbstractControl::onNextClicked (void)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.SS "virtual void AbstractControl::onPlayPauseClicked (void)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.SS "virtual void AbstractControl::onPrevClicked (void)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.SS "virtual void AbstractControl::onVolumeChanged (int)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.SS "void AbstractControl::playPause ()\fC [signal]\fP"
+
+.SS "void AbstractControl::prev ()\fC [signal]\fP"
+
+.SS "void AbstractControl::stop ()\fC [signal]\fP"
+
+.SS "void AbstractControl::volumeSelected (int)\fC [signal]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

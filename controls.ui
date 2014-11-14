@@ -258,22 +258,6 @@ color:red;
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSliderPosition</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>Controls</receiver>
-   <slot>onElapsedChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>496</x>
-     <y>106</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>229</x>
-     <y>95</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>horizontalSliderVolume</sender>
    <signal>valueChanged(int)</signal>
    <receiver>Controls</receiver>

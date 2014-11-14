@@ -1,0 +1,136 @@
+.TH "PlaylistModel" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlaylistModel \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <playlistmodel\&.h>\fP
+.PP
+Inherits QAbstractItemModel\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBColumn\fP { \fBTitle\fP = 0, \fBColumnCount\fP }"
+.br
+.in -1c
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "int \fBrowCount\fP (const QModelIndex &\fBparent\fP=QModelIndex()) const "
+.br
+.ti -1c
+.RI "int \fBcolumnCount\fP (const QModelIndex &\fBparent\fP=QModelIndex()) const "
+.br
+.ti -1c
+.RI "QModelIndex \fBindex\fP (int row, int column, const QModelIndex &\fBparent\fP=QModelIndex()) const "
+.br
+.ti -1c
+.RI "QModelIndex \fBparent\fP (const QModelIndex &child) const "
+.br
+.ti -1c
+.RI "QVariant \fBdata\fP (const QModelIndex &\fBindex\fP, int role=Qt::DisplayRole) const "
+.br
+.ti -1c
+.RI "QMediaPlaylist * \fBplaylist\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetPlaylist\fP (QMediaPlaylist *\fBplaylist\fP)"
+.br
+.ti -1c
+.RI "bool \fBsetData\fP (const QModelIndex &\fBindex\fP, const QVariant &value, int role=Qt::DisplayRole)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlaylistModel\fP (QObject *\fBparent\fP=0)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBbeginInsertItems\fP (int start, int end)"
+.br
+.ti -1c
+.RI "void \fBendInsertItems\fP ()"
+.br
+.ti -1c
+.RI "void \fBbeginRemoveItems\fP (int start, int end)"
+.br
+.ti -1c
+.RI "void \fBendRemoveItems\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeItems\fP (int start, int end)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QMediaPlaylist * \fBm_playlist\fP"
+.br
+.ti -1c
+.RI "QMap< QModelIndex, QVariant > \fBm_data\fP"
+.br
+.in -1c
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPlaylistModel::Column\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fITitle \fP\fP
+.TP
+\fB\fIColumnCount \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlaylistModel::PlaylistModel (QObject *parent = \fC0\fP)\fC [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlaylistModel::beginInsertItems (intstart, intend)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void PlaylistModel::beginRemoveItems (intstart, intend)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void PlaylistModel::changeItems (intstart, intend)\fC [private]\fP, \fC [slot]\fP"
+
+.SS "int PlaylistModel::columnCount (const QModelIndex &parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
+
+.SS "QVariant PlaylistModel::data (const QModelIndex &index, introle = \fCQt::DisplayRole\fP) const\fC [slot]\fP"
+
+.SS "void PlaylistModel::endInsertItems ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "void PlaylistModel::endRemoveItems ()\fC [private]\fP, \fC [slot]\fP"
+
+.SS "QModelIndex PlaylistModel::index (introw, intcolumn, const QModelIndex &parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
+
+.SS "QModelIndex PlaylistModel::parent (const QModelIndex &child) const\fC [slot]\fP"
+
+.SS "QMediaPlaylist * PlaylistModel::playlist () const\fC [slot]\fP"
+
+.SS "int PlaylistModel::rowCount (const QModelIndex &parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
+
+.SS "bool PlaylistModel::setData (const QModelIndex &index, const QVariant &value, introle = \fCQt::DisplayRole\fP)\fC [slot]\fP"
+
+.SS "void PlaylistModel::setPlaylist (QMediaPlaylist *playlist)\fC [slot]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QMap<QModelIndex, QVariant> PlaylistModel::m_data\fC [private]\fP"
+
+.SS "QMediaPlaylist* PlaylistModel::m_playlist\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

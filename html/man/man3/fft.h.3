@@ -1,0 +1,69 @@
+.TH "fft.h" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fft.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <complex>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <valarray>\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::complex< double > \fBComplex\fP"
+.br
+.ti -1c
+.RI "typedef std::valarray< \fBComplex\fP > \fBCArray\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfft\fP (\fBCArray\fP &x)"
+.br
+.RI "\fIfft calcs forward FFT transform \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const double \fBPI\fP = 3\&.141592653589793238460"
+.br
+.RI "\fIPI is just PI\&. \fP"
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef std::valarray<\fBComplex\fP> \fBCArray\fP"
+
+.SS "typedef std::complex<double> \fBComplex\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "void fft (\fBCArray\fP &x)"
+
+.PP
+fft calcs forward FFT transform 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP is the array to be transformed\&. The result is thrown directly onto it 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "const double PI = 3\&.141592653589793238460"
+
+.PP
+PI is just PI\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

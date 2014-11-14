@@ -1,0 +1,136 @@
+.TH "MediaInfo" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MediaInfo \- 
+.PP
+The \fBMediaInfo\fP class is supposed to be able to display information about the current media that is been played\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mediainfo\&.h>\fP
+.PP
+Inherits \fBAbstractMediaInfo\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetAtribute\fP (QString property, QString value)"
+.br
+.RI "\fIsetAtribute receives a pair property/value from mainwindow widget \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMediaInfo\fP (QWidget *parent=0)"
+.br
+.RI "\fIClass constructor to perform initial setups\&. \fP"
+.ti -1c
+.RI "\fB~MediaInfo\fP ()"
+.br
+.RI "\fIClass destructor\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::MediaInfo * \fBui\fP"
+.br
+.RI "\fIui access the form that draws the controls user interface \fP"
+.ti -1c
+.RI "QString \fBartist\fP"
+.br
+.RI "\fIsome handsome strings to store your information \fP"
+.ti -1c
+.RI "QString \fBtitle\fP"
+.br
+.ti -1c
+.RI "QString \fBalbum\fP"
+.br
+.ti -1c
+.RI "QString \fBbitrate\fP"
+.br
+.ti -1c
+.RI "QString \fBcodec\fP"
+.br
+.ti -1c
+.RI "QString \fBtrack\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMediaInfo\fP class is supposed to be able to display information about the current media that is been played\&. 
+
+It receives several properties that are extracted from the current media available on media player 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MediaInfo::MediaInfo (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Class constructor to perform initial setups\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP is the pointer to parent widget (it is supposed to be the place where this widget has to be drawn) 
+.RE
+.PP
+
+.SS "MediaInfo::~MediaInfo ()"
+
+.PP
+Class destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void MediaInfo::setAtribute (QStringproperty, QStringvalue)\fC [slot]\fP"
+
+.PP
+setAtribute receives a pair property/value from mainwindow widget 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproperty\fP receives a string that may hold the following values:
+.IP "\(bu" 2
+'AlbumArtist' : the album artist
+.IP "\(bu" 2
+'Title': music title
+.IP "\(bu" 2
+'AlbumTitle': album title
+.IP "\(bu" 2
+'TrackNumber': track number
+.IP "\(bu" 2
+'AudioBitRate': song bitrate
+.IP "\(bu" 2
+'AudioCodec': song codec
+.PP
+.br
+\fIvalue\fP receives the information associated to its corresponding property ex: 'AlbumArtist' <==> 'Elton Jonh' 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "QString MediaInfo::album\fC [private]\fP"
+
+.SS "QString MediaInfo::artist\fC [private]\fP"
+
+.PP
+some handsome strings to store your information 
+.SS "QString MediaInfo::bitrate\fC [private]\fP"
+
+.SS "QString MediaInfo::codec\fC [private]\fP"
+
+.SS "QString MediaInfo::title\fC [private]\fP"
+
+.SS "QString MediaInfo::track\fC [private]\fP"
+
+.SS "Ui::MediaInfo* MediaInfo::ui\fC [private]\fP"
+
+.PP
+ui access the form that draws the controls user interface 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Blokbox from the source code\&.

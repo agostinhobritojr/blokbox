@@ -86,8 +86,7 @@ public slots:
    */
   void metaDataChanged();
   /**
-   * @brief next is activated every time user select the "next" song
-   * to be played
+   * @brief next should be activated if it wants to play previous media on sequence
    */
   void next();
   /**
@@ -97,11 +96,36 @@ public slots:
    * manipulation details
    */
   void onAddFolderToLibrary();
+  /**
+   * @brief onAddMediaToPlayList allows the user to insert a new file on the library
+   * @param media is the path to the file the user wants to insert
+   */
   void onAddMediaToPlayList(QString media);
+
+  /**
+   * @brief playPause should be activated if it wants to play or pause the music
+   */
   void playPause();
+  /**
+   * @brief prev should be activated if it wants to play next media on sequence
+   */
   void prev();
+  /**
+   * @brief processBuffer is responsible to deliver the current audio buffer to
+   * a calculator to perform fft calculations
+   * @param buffer stores the audio buffer that is sent by the player
+   */
   void processBuffer(QAudioBuffer buffer);
+  /**
+   * @brief setMediaAt alows to forward/rewind the song
+   * @details The user may have multiple controls ant this will help to keep controls coherent
+   * @param percent tells the percentage of stream it wants to play
+   */
   void setMediaAt(qint32 percent);
+  /**
+   * @brief setVolume should
+   * @param volume
+   */
   void setVolume(int volume);
   void slotPositionChanged(qint64 e);
   void spectrumAvailable(QVector<double> spectrum);
