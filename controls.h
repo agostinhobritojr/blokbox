@@ -3,6 +3,7 @@
 #include "abstractcontrol.h"
 
 #include <QTime>
+#include <QIcon>
 
 namespace Ui {
 class Controls;
@@ -38,6 +39,10 @@ private:
      * that is playing
      */
     qint64 duration;
+    /**
+     * @brief play and pause icons for alternating when user media plays or pause
+     */
+    QIcon playIcon, pauseIcon;
 public slots:
     /**
      * @brief onPlayPauseClicked is activated when the user presses the play/pause button
@@ -73,6 +78,14 @@ public slots:
      * @param value stores the amount of time for the current media
      */
     void onDurationChanged(qint64 value);
+    /**
+     * @brief onPlayerStateChanged deals with the state of play/pause button
+     * @details The developer may want to state different icons for each state
+     * @param state stores play/pause state
+     * - true: Player is on playing state
+     * - false: Player is on paused state
+     */
+    void onPlayerStateChanged(bool state);
 protected slots:
     /**
      * @brief onSliderReleased is called when the user releases the duration slider

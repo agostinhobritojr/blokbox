@@ -79,6 +79,8 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(player,SIGNAL(volumeChanged(int)),
                         ui->control,SLOT(onVolumeChanged(int)));
 
+  connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),
+          SLOT(mediaStateChanged(QMediaPlayer::State)));
   // that is the audio probe object that "listen to"
   // the music. It will help with fft stuff
   probe = new QAudioProbe();
@@ -92,10 +94,12 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->control, SIGNAL(playPause()), this, SLOT(playPause()));
   connect(ui->control, SIGNAL(prev()), this, SLOT(prev()));
   connect(ui->control, SIGNAL(next()), this, SLOT(next()));
+  connect(this, SIGNAL(playPauseChanged(bool)),
+          ui->control,SLOT(onPlayerStateChanged(bool)));
 
   // when the music position changes on player, it has to be
   // informed to the control unit to redraw it ui
-  connect(player,SIGNAL(positionChanged(qint64)),
+  connect(player, SIGNAL(positionChanged(qint64)),
           ui->control,SLOT(onElapsedChanged(qint64)));
 
   // fft goes here...
@@ -334,6 +338,15 @@ void MainWindow::setMediaAt(qint32 percent){
 void MainWindow::slotPositionChanged(qint64 e){
   Q_UNUSED(e);
   ui->control->onElapsedChanged(100*e/player->duration());
+}
+
+void MainWindow::mediaStateChanged(QMediaPlayer::State state){
+  if(state == QMediaPlayer::PlayingState){
+    emit playPauseChanged(true);
+  }
+  else{
+    emit playPauseChanged(false);
+  }
 }
 
 // new song arriving

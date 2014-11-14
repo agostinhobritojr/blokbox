@@ -4,5 +4,6 @@
         <file>resources/prev.svg</file>
         <file>resources/stop.svg</file>
         <file>resources/pause.svg</file>
+        <file>resources/play.svg</file>
     </qresource>
 </RCC>

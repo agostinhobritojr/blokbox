@@ -79,6 +79,15 @@ public slots:
    */
   void mediaStatusChanged(QMediaPlayer::MediaStatus status);
   /**
+   * @brief mediaStateChanged is activated when media player status changes
+   * @details It deals with player's playback status
+   * @param state receives current state. Possible values are:
+   *  -QMediaPlayer::StoppedState
+   *  -QMediaPlayer::PlayingState
+   * - QMediaPlayer::PausedState
+   */
+  void mediaStateChanged(QMediaPlayer::State state);
+  /**
    * @brief metaDataChanged is activated every time a given metadata changes
    * on player
    * @details Metadata are used to store on song files information such as
@@ -185,6 +194,8 @@ signals:
 
   // tells there are new directories to be added to the music library
   int addFolderToLibrary(QString folder);
+
+  int playPauseChanged(bool);
 
 protected slots:
 };

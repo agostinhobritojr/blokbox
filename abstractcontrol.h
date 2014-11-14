@@ -29,9 +29,11 @@ public slots:
   // elapsed time has changed somewhere
   virtual void onElapsedChanged(qint64)=0;
 
- // void myElapsedChanged(int)=0;
+  // song duration has changed;
   virtual void onDurationChanged(qint64)=0;
 
+  // deals with play/pause player state
+  virtual void onPlayerStateChanged(bool)=0;
 
 signals:
   // tells when user pressed play/pause button

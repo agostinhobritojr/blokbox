@@ -30,6 +30,8 @@ Controls::Controls(QWidget *parent):
   // nice red colors to lcdnumbers
   ui->lcdNumberElapsed->setStyleSheet(QString("QLCDNumber{color:red;}"));
   ui->lcdNumberDuration->setStyleSheet(QString("QLCDNumber{color:red;}"));
+  playIcon = QIcon(":/resources/play.svg");
+  pauseIcon = QIcon(":/resources/pause.svg");
 }
 
 // put the trash on the trash
@@ -47,17 +49,17 @@ void Controls::onSliderReleased(){
   emit elapsedSelected(ui->horizontalSliderPosition->value()*duration/100);
 }
 
-// the folowing method is self-explained
-void Controls::onPlayPauseClicked(){
+// the folowing method is (almost) self-explained
+void Controls::onPlayPauseClicked(void){
   emit playPause();
 }
 
-// the folowing method is self-explained
+// the folowing method is (almost) self-explained
 void Controls::onPrevClicked(){
   emit prev();
 }
 
-// the folowing method is self-explained
+// the folowing method is (almost) self-explained
 void Controls::onNextClicked(){
   emit next();
 }
@@ -82,6 +84,16 @@ void Controls::onDurationChanged(qint64 value){
   duration = value;
   // display the new duration in lcdnumber
   ui->lcdNumberDuration->display(QTime(0,0).addMSecs(value).toString(QString("hh:mm:ss")));
+}
+
+void Controls::onPlayerStateChanged(bool state){
+  if(state == true){
+    ui->pushButtonPlayPause->setIcon(pauseIcon);
+  }
+  else{
+    ui->pushButtonPlayPause->setIcon(playIcon);
+  }
+
 }
 
 // elapsed time has changed
