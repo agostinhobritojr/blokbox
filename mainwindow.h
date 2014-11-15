@@ -178,23 +178,52 @@ private:
   // left and right mean levels
   double levelLeft, levelRight;
 signals:
-  // telle a new buffer from audio prober
+  /**
+   * @brief spectrumChanged is emitted when a new spectrum is
+   * available for display purposes
+   * @param sample stores the array of doubles with the Fourier spectrum
+   */
   int spectrumChanged(QVector<double> &sample);
 
-  // music position changed by user. Tell
-  // new position to the player
+  /**
+   * @brief positionChanged is emitted when media playing position changes
+   * @param position is a value on range [0,total duration of song]
+   */
   int positionChanged(qint64 position);
 
-  // tells the new left and right mean audio levels
+  /**
+   * @brief levels tells the new left and right mean audio levels
+   * @param left stores left mean audio level
+   * @param right stores right mean audio level
+   */
   int levels(double left, double right);
 
-  // tells the duration of media
-  // when a new media is played
+  /**
+   * @brief elapsedTimeChanged tells the duration of media
+   * when a new media arrives on media player
+   * @param elapsed is the amount of time elapsed from the beginning
+   * of the song
+   */
   int elapsedTimeChanged(qint64 elapsed);
 
-  // tells there are new directories to be added to the music library
+   /**
+   * @brief addFolderToLibrary tells there are new directories
+   * to be added to the music library
+   * @details We do not threat this signal yet. It is here
+   * just to remember include library customization in the future
+   * @param folder stores string folder
+   */
   int addFolderToLibrary(QString folder);
 
+  /**
+   * @brief playPauseChanged emits the state of media player.
+   * @details It may be used to update a play/pause button somewhere
+   * since the user may decide to user different icons for different
+   * states.
+   * - true: Player is on playing state
+   * - false: Player is on paused state
+   * @return
+   */
   int playPauseChanged(bool);
 
 protected slots:
