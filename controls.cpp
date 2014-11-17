@@ -86,11 +86,14 @@ void Controls::onDurationChanged(qint64 value){
   ui->lcdNumberDuration->display(QTime(0,0).addMSecs(value).toString(QString("hh:mm:ss")));
 }
 
+// player state has changed...
 void Controls::onPlayerStateChanged(bool state){
   if(state == true){
+    // if playing, display pause icon
     ui->pushButtonPlayPause->setIcon(pauseIcon);
   }
   else{
+    // if paused, display play icon (duh!)
     ui->pushButtonPlayPause->setIcon(playIcon);
   }
 
