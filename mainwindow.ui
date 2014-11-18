@@ -14,40 +14,58 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-QScrollBar::horizontal {
-	border: 0px solid red;
-	background: #cccccc;
-	height: 10px;
-	margin: 0px 0px 0px 0px;
-border-radius: 5px;}
+   <string notr="true">QPushButton {background-color:transparent; border:0;}
 
-QScrollBar::vertical {
-	border: 0px solid grey;
-	background: #cccccc;
-	width: 10px;
-	margin: 0px 0px 0px 0px;
-border-radius: 5px;}
+QSlider::groove:horizontal {
+border: 0px;
+height: 10px;
+background: rgb(170, 0, 0);
+margin: 6;
+border-radius: 5px;
+}
 
-QScrollBar::handle:horizontal {
-     min-width: 10px;
-     background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #b40000, stop:1 #8f0000);
-     border: 0px solid #5c5c5c;
-     width: 10px;
-     height: 10px;
-     margin: 0px; 
-     border-radius: 5px;
-} 
+QSlider::handle:horizontal {
+background: red;
+width: 20px;
+height: 22px;
+margin: -5px;
+border-radius: 10px;
+border: 0px red;
+}
 
-QScrollBar::handle:vertical {
-     min-width: 10px;
-     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #b40000, stop:1 #8f0000);
-     border: 0px solid #5c5c5c;
-     width: 10px;
-     height: 10px;
-     margin: 0px; 
-     border-radius: 5px;
-} 
+QSlider::groove:vertical {
+border: 0px;
+width: 20px;
+background: rgb(180, 0, 0);
+margin: 0 px 0;
+border-radius: 5px;
+}
+
+QSlider::handle:vertical {
+background: white;
+width: 8px;
+height: 18px;
+margin: 2 2 2 2;
+border-radius: 8px;
+}
+
+QSlider::add-page:qlineargradient {
+background: rgb(143, 0, 2);
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+
+QSlider::sub-page:qlineargradient {
+background: rgb(255, 125, 127);
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+
 QSplitter::handle:horizontal {
     width: 1px;
      background:  rgb(223, 215, 207);
@@ -170,7 +188,7 @@ QTableView::item:hover {
          </property>
          <widget class="Controls" name="control" native="true">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -186,6 +204,11 @@ QTableView::item:hover {
          </widget>
         </widget>
         <widget class="QListView" name="listViewPlaylist"/>
+        <widget class="QSlider" name="horizontalSlider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="Spectrograph" name="visualizer" native="true">
