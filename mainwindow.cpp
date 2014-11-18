@@ -4,8 +4,8 @@
 // constructor: warm up all stuff
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
-  ui(new Ui::MainWindow),
-  audioInfo(QAudioDeviceInfo::defaultInputDevice())
+  ui(new Ui::MainWindow)
+//,audioInfo(QAudioDeviceInfo::defaultInputDevice())
 {
   // draws the ui
   ui->setupUi(this);
@@ -56,10 +56,6 @@ MainWindow::MainWindow(QWidget *parent) :
   // this allow the user to select the media it wants to play
   connect(ui->listViewPlaylist, SIGNAL(doubleClicked(QModelIndex)),
           this, SLOT(goToItem(QModelIndex)));
-
-  // when play position changes, start callback function
-  connect(player, SIGNAL(positionChanged(qint64)),
-          this, SLOT(slotPositionChanged(qint64)));
 
   // if some metadata changed for media, display it somewhere
   // it seems not work on windows
@@ -173,7 +169,7 @@ void MainWindow::onAddFolderToLibrary(){
                                   QDir::homePath(),
                                   QFileDialog::ShowDirsOnly |
                                   QFileDialog::DontResolveSymlinks);
-  ui->library->searchPath(folder);
+  ui->library->addToSearchPath(folder);
 }
 
 void MainWindow::onAddMediaToPlayList(QString media){
@@ -332,12 +328,6 @@ void MainWindow::setMediaAt(qint32 percent){
     percent = 100;
   }
   emit positionChanged(percent*player->duration()/100);
-}
-
-// user selected a new position in the song
-void MainWindow::slotPositionChanged(qint64 e){
-  Q_UNUSED(e);
-  ui->control->onElapsedChanged(100*e/player->duration());
 }
 
 void MainWindow::mediaStateChanged(QMediaPlayer::State state){

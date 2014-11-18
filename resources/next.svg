@@ -63,8 +63,8 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1879"
-     inkscape:window-height="1056"
+     inkscape:window-width="1559"
+     inkscape:window-height="876"
      inkscape:window-x="41"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -91,33 +91,26 @@
      transform="translate(-111.42188,-70.228263)">
     <path
        style="fill:#b40000;fill-opacity:1;stroke:none"
-       d="m 111.42188,70.228263 0,87.148177 87.15626,0 0,-87.148177 -87.15626,0 z"
+       d="m 198.57814,70.228263 0,87.148177 -87.15626,0 0,-87.148177 87.15626,0 z"
        id="path2990"
        inkscape:connector-curvature="0" />
-    <g
-       id="g3011"
-       transform="translate(2.0606137,1.73153)">
-      <path
-         inkscape:connector-curvature="0"
-         id="rect3876"
-         d="m 122.18281,90.493813 37.37807,21.577007 -37.37807,21.57701 0,-43.154017 z"
-         style="fill:#ffffff;fill-opacity:1;stroke:none" />
-      <rect
-         ry="0.87538773"
-         y="90.570824"
-         x="175.51724"
-         height="43"
-         width="8.1787338"
-         id="rect3907-3"
-         style="fill:#ffffff;fill-opacity:1;stroke:none" />
-      <rect
-         ry="0.87538773"
-         y="90.570824"
-         x="161.71503"
-         height="43"
-         width="8.1787338"
-         id="rect3907-3-5"
-         style="fill:#ffffff;fill-opacity:1;stroke:none" />
-    </g>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 124.24343,92.225343 37.37807,21.577007 -37.37807,21.57701 0,-43.154017 z"
+       id="rect3876"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect3907-3"
+       width="8.1787338"
+       height="43"
+       x="177.57785"
+       y="92.302353"
+       ry="0.87538773" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 152.03443,96.632317 29.74383,17.170033 -29.74383,17.17004 0,-34.340073 z"
+       id="rect3876-3"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

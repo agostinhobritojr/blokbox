@@ -14,7 +14,7 @@
 Spectrograph::Spectrograph(QWidget *parent) :
   AbstractSpectrograph(parent){
   startTimer(15);
-  NUM_BANDS = 128;
+  NUM_BANDS = 64;
   spectrum.resize(NUM_BANDS);
   decay.resize(NUM_BANDS);
   gravity.resize(NUM_BANDS);
