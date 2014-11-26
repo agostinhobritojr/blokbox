@@ -12,6 +12,7 @@
 #include <QDir>
 #include <QMediaPlayer>
 #include <QString>
+#include <QSet>
 
 #ifdef USE_TAGLIB
 #include <taglib/fileref.h>
@@ -28,14 +29,25 @@ class MediaLibrary : public QWidget
 public:
   explicit MediaLibrary(QWidget *parent = 0);
   ~MediaLibrary();
-  void searchPath(QString path);
+  void addToSearchPath(QString path);
+  /**
+   * @brief getSearchPath returns a QSet containing QStrings with song paths
+   * @return the set of paths
+   */
+  QSet<QString> getSearchPath(void);
 private:
-  Ui::MediaLibrary *ui;
-  QMediaPlayer *auxplayer;
+
 #ifdef USE_TAGLIB
   TagLib::FileRef fileref;
   TagLib::Tag *tag;
 #endif
+
+  Ui::MediaLibrary *ui;
+  QMediaPlayer *auxplayer;
+  /**
+   * @brief searchPath stores the search path for seeking songs
+   */
+  QSet<QString> searchPath;
   QStandardItemModel *treeModel, *tableModel;
   QStandardItem* searchArtist(QString artist);
   QStandardItem *searchAlbum(QStandardItem *artistItem, QString album);

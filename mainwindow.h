@@ -136,46 +136,73 @@ public slots:
    * @param volume
    */
   void setVolume(int volume);
-  void slotPositionChanged(qint64 e);
+
+  /**
+   * @brief spectrumAvailable is emitted every time a new spectrum is ready
+   * to be displayed
+   * @param spectrum is an array of doubles containing the Fourier spectrum
+   */
   void spectrumAvailable(QVector<double> spectrum);
 
 private:
-  // User interface widget
+  /**
+   * @brief ui is a pointer to the user interface widget (not this mainwindow class!!!)
+   */
   Ui::MainWindow *ui;
 
-  // pointer to the media player object
+  /**
+   * @brief player is a pointer to the media player
+   */
   QMediaPlayer *player;
 
-  // stores the playlist
+  /**
+   * @brief playlist stores the playlist
+   */
   QMediaPlaylist *playlist;
 
   // audio info... we do not use it
-  QAudioDeviceInfo audioInfo;
+  // QAudioDeviceInfo audioInfo;
 
-  // a buffer to copy audio into it
-  QByteArray buffer;
-
-  // the audio prober
+  /**
+   * @brief probe is the audio prober responsible for listening to the music
+   * and retrieve audio buffers
+   */
   QAudioProbe *probe;
 
   // a fft calculator object
+  /**
+   * @brief calculator is a Fourier spectrum calculator.
+   * @details The calculator "object" receives audio samples, perform fft calculations
+   * and tells Fourier spectrums when they are ready for displaying
+   */
   FFTCalc *calculator;
 
-  // item model to design the playlist into mainwindow
+  /**
+   * @brief model stores the playlist model
+   * @details We use a model/view approach to store the playlist elements. This approach
+   * allows listview elements access the playlist structure and interpret it as kind of tree
+   * with branches of artists... and disks... and songs.
+   */
   QStandardItemModel *model;
 
-  // each item to be displayed in playlist
-  QStandardItem *item;
-
-  // input sample to fft calc
+  /**
+   * @brief sample stores an audio sample to be sent for fft calculator
+   */
   QVector<double> sample;
 
-  // output vector with spectrum
+  /**
+   * @brief spectrum stores the output Fourier spectrum
+   */
   QVector<double> spectrum;
 
+  /**
+   * @brief playlistModel stores the playlist model for insertions and display purposes...
+   */
   PlaylistModel *playlistModel;
 
-  // left and right mean levels
+  /**
+   * @brief levelLeft and rightlevel stores audio mean left and right levels
+   */
   double levelLeft, levelRight;
 signals:
   /**

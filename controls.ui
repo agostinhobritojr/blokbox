@@ -7,51 +7,26 @@
     <x>0</x>
     <y>0</y>
     <width>836</width>
-    <height>198</height>
+    <height>65</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>40</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton {background-color:transparent; border:0;}
-
-QSlider::groove:horizontal {
-border: 0px;
-height: 20px;
-background: rgb(180, 0, 0);
-margin: 0 px 0;
-border-radius: 10px;
-}
-QSlider::groove:vertical {
-border: 0px;
-width: 20px;
-background: rgb(180, 0, 0);
-margin: 0 px 0;
-border-radius: 10px;
-}
-
-QSlider::handle:horizontal {
-background: white;
-width: 18px;
-height: 8px;
-margin: 2 2 2 2;
-border-radius: 8px;
-}
-QSlider::handle:vertical {
-background: white;
-width: 8px;
-height: 18px;
-margin: 2 2 2 2;
-border-radius: 8px;
-}
-</string>
+   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_4">
    <item>
@@ -60,6 +35,12 @@ border-radius: 8px;
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QSlider" name="horizontalSliderVolume">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -70,6 +51,12 @@ border-radius: 8px;
        </item>
        <item>
         <widget class="QSlider" name="horizontalSliderPosition">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -157,6 +144,12 @@ color:red;
            </item>
            <item>
             <widget class="QPushButton" name="pushButtonPlayPause">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="text">
               <string/>
              </property>

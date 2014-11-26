@@ -131,8 +131,15 @@ QStandardItem* MediaLibrary::searchSong(QStandardItem *albumItem, QString song){
   return NULL;
 }
 
-void MediaLibrary::searchPath(QString path){
+void MediaLibrary::addToSearchPath(QString path){
   QDir dir;
+  // check if the path is already on the set
+  if(searchPath.contains(path)){
+    // if yes, return
+    return;
+  }
+  // insert path on searchPath
+  searchPath.insert(path);
   dir.setPath(path);
   QStack<QString> stack;
   QString fullPath, artist, album, title;
