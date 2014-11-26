@@ -39,7 +39,6 @@ Spectrograph::Spectrograph(QWidget *parent) :
   decayBrush.setStyle(Qt::SolidPattern);
 //  barWidth = MIN_BARWIDTH;
   barWidth = 1;
-  barSpacing = 1;
 }
 
 void Spectrograph::resizeEvent(QResizeEvent *e){
@@ -50,7 +49,7 @@ void Spectrograph::resizeEvent(QResizeEvent *e){
   gradientBrush = QBrush(gradient);
   barWidth = (float)width()/NUM_BANDS;
   qDebug() << "barwidth = " << barWidth;
-  altura = height();
+  widgetHeight = height();
   repaint();
 }
 
@@ -102,11 +101,11 @@ void Spectrograph::paintEvent(QPaintEvent *e){
   for(int i=0; i<NUM_BANDS;i++){
     p1x = i*barWidth;
     p2x = p1x+barWidth;
-    p1y = altura-spectrum[i];
+    p1y = widgetHeight-spectrum[i];
     p.setBrush(Qt::white);
 //    p.setBrush(gradient);
-    p.drawRect(QRectF(QPointF(p1x,p1y),QPointF(p2x,altura)));
-    p1y = (float)altura -decay[i];
+    p.drawRect(QRectF(QPointF(p1x,p1y),QPointF(p2x,widgetHeight)));
+    p1y = (float)widgetHeight -decay[i];
     p.setBrush(decayBrush);
     p.drawEllipse(QPointF(p1x+barWidth/2,p1y),3,3);
     p.drawRect(QRectF(QPointF(p1x,p1y),QPointF(p2x,p1y+3)));

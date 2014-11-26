@@ -132,11 +132,14 @@ private:
    */
   QPen pen;
   /**
-   * @brief Spacing between spectrum bars. Usually, just one pixel
+   * @brief width of a bar
    */
-  float barSpacing, barWidth, widgetHeight, altura;
+  float barWidth;
+  /**
+   * @brief widgetHeight stores the widget Height
+   */
+  float widgetHeight;
   QAction *acao;
-  double time;
 };
 
 #endif // SPECTROGRAM_H
