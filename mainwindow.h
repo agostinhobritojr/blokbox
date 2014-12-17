@@ -28,6 +28,7 @@
 // mainwindow uses a fft calculator and a playlist model for displaying the playlist
 #include "fftcalc.h"
 #include "playlistmodel.h"
+#include "interfacecreatordialog.h"
 
 /**
  * @brief This is the namespace that defines the mainwindow ui widget.
@@ -143,6 +144,11 @@ public slots:
    * @param spectrum is an array of doubles containing the Fourier spectrum
    */
   void spectrumAvailable(QVector<double> spectrum);
+
+  /**
+   * @brief interfaceDesigner calls the interface designer object
+   */
+  void interfaceDesigner();
 
 private:
   /**

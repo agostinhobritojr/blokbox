@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     mediainfo.cpp \
     medialibrary.cpp \
     playlistmodel.cpp \
-    lightcycle.cpp
+    lightcycle.cpp \
+    interfacedesigner.cpp \
+    interfacecreatordialog.cpp
  
 HEADERS  += mainwindow.h \
     spectrograph.h \
@@ -34,13 +36,16 @@ HEADERS  += mainwindow.h \
     abstractmediainfo.h \
     medialibrary.h \
     playlistmodel.h \
-    lightcycle.h
+    lightcycle.h \
+    interfacedesigner.h \
+    interfacecreatordialog.h
    fft.h
 
 FORMS    += mainwindow.ui \
     controls.ui \
     mediainfo.ui \
-    medialibrary.ui
+    medialibrary.ui \
+    interfacecreatordialog.ui
 
 RESOURCES += \
     resources.qrc
@@ -54,5 +59,5 @@ linux{
   LIBS += -ltag
   DEFINES += USE_TAGLIB
 }
-# If you are brave, try the following link...
+# If you are brave on windows, you should try the following link...
 # http://joelverhagen.com/blog/2010/11/how-to-compile-taglib-on-windows/

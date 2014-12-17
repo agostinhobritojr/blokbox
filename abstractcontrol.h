@@ -4,26 +4,45 @@
 #include <QWidget>
 
 // this is the abstract class to implement audio controls
+/**
+ * @brief The AbstractControl class is a base abstract class for implementing
+ * audio controls.
+ * @details It provides a set of functions that shall be overloaded, since they
+ * will be called when media control events arrives from the mainwindow widget.
+ * It also provides signals that should be emitted when a media control widget
+ * receive user events, such as play, pause, volume changing and so on.
+ */
 class AbstractControl : public QWidget{
 private:
   Q_OBJECT
 public:
-  // constructor does nothing
-  explicit AbstractControl(QWidget *parent){
-    Q_UNUSED(parent);
-  }
+  /**
+   * @brief AbstractControl is the class constructor. In fact, it does nothing, but
+   * it is used to tell who is the parent of this widget.
+   * @param parent is a pointer to the parent widget. Class must know who is it in order
+   * the widget to be drawn correctly.
+   */
+  explicit AbstractControl(QWidget *parent): QWidget(parent){}
 
 public slots:
-  // listen when mainwindow tells user pressed play/pause button
+  /**
+   * @brief onPlayPauseClicked listens when mainwindow tells user pressed play/pause button
+   */
   virtual void onPlayPauseClicked(void)=0;
 
-  // listen when mainwindow tells user pressed prev button
+  /**
+   * @brief onPrevClicked listens when mainwindow tells user pressed prev button
+   */
   virtual void onPrevClicked(void)=0;
 
-  // listen when mainwindow tells user pressed next button
+  /**
+   * @brief onNextClicked listens when mainwindow tells user pressed next button
+   */
   virtual void onNextClicked(void)=0;
 
-  // someone changed the volume somewhere
+  /**
+   * @brief onVolumeChanged is activated when someone changed the volume somewhere
+   */
   virtual void onVolumeChanged(int)=0;
 
   // elapsed time has changed somewhere
@@ -44,9 +63,6 @@ signals:
 
   // tells when user pressed prevp button
   void prev();
-
-  // tells when user pressed stop button
-  void stop();
 
   // tells when user changed volume
   void volumeSelected(int);

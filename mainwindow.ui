@@ -14,12 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton {
-	background-color:transparent; 
-	border:0;
-}
-
-QSlider::groove:horizontal {
+   <string notr="true">QSlider::groove:horizontal {
 border: 0px;
 height: 10px;
 background: rgb(170, 0, 0);
@@ -68,11 +63,20 @@ border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
 }
 
-QSplitter::handle:horizontal {
+/*QSplitter::handle:horizontal {
+  width: 1px;
+    background:  rgb(223, 215, 207);
+}*/
+QSplitter::handle{
+    height: 1px;
+   background: red;
+}
+
+QSplitter#interface_designer::handle:horizontal {
     width: 1px;
      background:  rgb(223, 215, 207);
 }
-QSplitter::handle:vertical {
+QSplitter#interface_designer::handle:vertical {
     height: 1px;
      background: rgb(223, 215, 207);
 }
@@ -238,6 +242,7 @@ QTableView::item:hover {
    </attribute>
    <addaction name="actionLoadFile"/>
    <addaction name="actionLoadDirectory"/>
+   <addaction name="actionInterface_Designer"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionLoadFile">
@@ -248,6 +253,11 @@ QTableView::item:hover {
   <action name="actionLoadDirectory">
    <property name="text">
     <string>LoadDirectory</string>
+   </property>
+  </action>
+  <action name="actionInterface_Designer">
+   <property name="text">
+    <string>Interface Designer</string>
    </property>
   </action>
  </widget>
@@ -303,6 +313,22 @@ QTableView::item:hover {
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionInterface_Designer</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>interfaceDesigner()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>503</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>bufferChanged(QAudioBuffer::S16U*,int)</signal>
@@ -313,5 +339,6 @@ QTableView::item:hover {
   <slot>loadMedia()</slot>
   <slot>setVolume(int)</slot>
   <slot>setMediaAt(int)</slot>
+  <slot>interfaceDesigner()</slot>
  </slots>
 </ui>

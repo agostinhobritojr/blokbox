@@ -265,6 +265,14 @@ void MainWindow::spectrumAvailable(QVector<double> spectrum){
   emit spectrumChanged(spectrum);
 }
 
+void MainWindow::interfaceDesigner()
+{
+  InterfaceCreatorDialog *dialog;
+  dialog = new InterfaceCreatorDialog(this);
+  dialog->setProperty("class","interface_designer");
+  dialog->exec();
+}
+
 // destructor... clear all mess
 MainWindow::~MainWindow(){
   //stops the player
