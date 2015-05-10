@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['sample',['sample',['../class_main_window.html#a96266e232144ae1aa0b59817d6b1e59c',1,'MainWindow']]],
-  ['spectrum',['spectrum',['../class_buffer_processor.html#a2a4bccc444837e9db1baad8379b7be76',1,'BufferProcessor::spectrum()'],['../class_main_window.html#a120acb602b2b1d9f8d57967dbaf32d2c',1,'MainWindow::spectrum()'],['../class_spectrograph.html#a296edd5252ddd851fc0f64784b127047',1,'Spectrograph::spectrum()']]],
-  ['startcolumn',['startColumn',['../class_light_cycle.html#a02114b1baddf6017d59e9081aed1bac0',1,'LightCycle']]]
+  ['ncols',['ncols',['../class_light_cycle.html#a08b2280e6a25b33cd18c42908805d754',1,'LightCycle']]],
+  ['newspectrum',['newSpectrum',['../class_spectrograph.html#a6776c7d46a475fb744c01b5fd7c6ec45',1,'Spectrograph']]],
+  ['num_5fbands',['NUM_BANDS',['../class_spectrograph.html#a2ee7c0f9ff6f1c4e91ace1dfb8e1edcb',1,'Spectrograph']]],
+  ['numberofchunks',['numberOfChunks',['../class_buffer_processor.html#af0f4d24a4ecfa5adefa9902eec7be01e',1,'BufferProcessor']]]
 ];

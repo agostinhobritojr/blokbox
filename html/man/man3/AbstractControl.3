@@ -1,4 +1,4 @@
-.TH "AbstractControl" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.TH "AbstractControl" 3 "Sun Apr 26 2015" "Blokbox" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -33,6 +33,9 @@ Inherited by \fBControls\fP\&.
 .ti -1c
 .RI "virtual void \fBonDurationChanged\fP (qint64)=0"
 .br
+.ti -1c
+.RI "virtual void \fBonPlayerStateChanged\fP (bool)=0"
+.br
 .in -1c
 .SS "Signals"
 
@@ -65,7 +68,7 @@ Inherited by \fBControls\fP\&.
 .in -1c
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "AbstractControl::AbstractControl (QWidget *parent)\fC [inline]\fP, \fC [explicit]\fP"
+.SS "AbstractControl::AbstractControl (QWidget * parent)\fC [inline]\fP, \fC [explicit]\fP"
 
 .SH "Member Function Documentation"
 .PP 
@@ -78,6 +81,8 @@ Inherited by \fBControls\fP\&.
 .SS "virtual void AbstractControl::onElapsedChanged (qint64)\fC [pure virtual]\fP, \fC [slot]\fP"
 
 .SS "virtual void AbstractControl::onNextClicked (void)\fC [pure virtual]\fP, \fC [slot]\fP"
+
+.SS "virtual void AbstractControl::onPlayerStateChanged (bool)\fC [pure virtual]\fP, \fC [slot]\fP"
 
 .SS "virtual void AbstractControl::onPlayPauseClicked (void)\fC [pure virtual]\fP, \fC [slot]\fP"
 

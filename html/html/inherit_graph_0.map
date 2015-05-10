@@ -1,0 +1,11 @@
+<map id="Gráfico de Hierarquia de Classes" name="Gráfico de Hierarquia de Classes">
+<area shape="rect" id="node2" href="$class_abstract_control.html" title="AbstractControl" alt="" coords="144,5,257,32"/>
+<area shape="rect" id="node4" href="$class_abstract_media_info.html" title="AbstractMediaInfo" alt="" coords="137,56,265,83"/>
+<area shape="rect" id="node6" href="$class_abstract_spectrograph.html" title="The AbstractSpectrograph class provides a generic interface for a spectrograph drawing widget..." alt="" coords="127,107,275,133"/>
+<area shape="rect" id="node8" href="$class_light_cycle.html" title="LightCycle" alt="" coords="159,157,243,184"/>
+<area shape="rect" id="node9" href="$class_media_library.html" title="MediaLibrary" alt="" coords="153,208,249,235"/>
+<area shape="rect" id="node10" href="$class_playlist.html" title="Playlist" alt="" coords="168,259,233,285"/>
+<area shape="rect" id="node3" href="$class_controls.html" title="The Controls class provides support to user control. " alt="" coords="337,5,407,32"/>
+<area shape="rect" id="node5" href="$class_media_info.html" title="The MediaInfo class is supposed to be able to display information about the current media that is bee..." alt="" coords="333,56,411,83"/>
+<area shape="rect" id="node7" href="$class_spectrograph.html" title="The Spectrograph class is used to draw the fourier spectrum on the screen. " alt="" coords="323,107,421,133"/>
+</map>

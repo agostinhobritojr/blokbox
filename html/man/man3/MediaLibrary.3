@@ -1,4 +1,4 @@
-.TH "MediaLibrary" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.TH "MediaLibrary" 3 "Sun Apr 26 2015" "Blokbox" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -27,8 +27,12 @@ Inherits QWidget\&.
 .RI "\fB~MediaLibrary\fP ()"
 .br
 .ti -1c
-.RI "void \fBsearchPath\fP (QString path)"
+.RI "void \fBaddToSearchPath\fP (QString path)"
 .br
+.ti -1c
+.RI "QSet< QString > \fBgetSearchPath\fP (void)"
+.br
+.RI "\fIgetSearchPath returns a QSet containing QStrings with song paths \fP"
 .in -1c
 .SS "Protected Member Functions"
 
@@ -73,6 +77,10 @@ Inherits QWidget\&.
 .RI "QMediaPlayer * \fBauxplayer\fP"
 .br
 .ti -1c
+.RI "QSet< QString > \fBsearchPath\fP"
+.br
+.RI "\fIsearchPath stores the search path for seeking songs \fP"
+.ti -1c
 .RI "QStandardItemModel * \fBtreeModel\fP"
 .br
 .ti -1c
@@ -81,7 +89,7 @@ Inherits QWidget\&.
 .in -1c
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "MediaLibrary::MediaLibrary (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+.SS "MediaLibrary::MediaLibrary (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
 
 .SS "MediaLibrary::~MediaLibrary ()"
 
@@ -89,26 +97,41 @@ Inherits QWidget\&.
 .PP 
 .SS "void MediaLibrary::addMediaToPlayList (QString)\fC [signal]\fP"
 
-.SS "void MediaLibrary::onDoubleClickItem (QModelIndexindex)\fC [private]\fP, \fC [slot]\fP"
+.SS "void MediaLibrary::addToSearchPath (QString path)"
 
-.SS "void MediaLibrary::onSelectItem (QModelIndexindex)\fC [private]\fP, \fC [slot]\fP"
+.SS "QSet<QString> MediaLibrary::getSearchPath (void)"
 
-.SS "void MediaLibrary::resizeEvent (QResizeEvent *e)\fC [protected]\fP"
+.PP
+getSearchPath returns a QSet containing QStrings with song paths 
+.PP
+\fBReturns:\fP
+.RS 4
+the set of paths 
+.RE
+.PP
 
-.SS "QStandardItem * MediaLibrary::searchAlbum (QStandardItem *artistItem, QStringalbum)\fC [private]\fP"
+.SS "void MediaLibrary::onDoubleClickItem (QModelIndex index)\fC [private]\fP, \fC [slot]\fP"
 
-.SS "QStandardItem * MediaLibrary::searchArtist (QStringartist)\fC [private]\fP"
+.SS "void MediaLibrary::onSelectItem (QModelIndex index)\fC [private]\fP, \fC [slot]\fP"
 
-.SS "void MediaLibrary::searchPath (QStringpath)"
+.SS "void MediaLibrary::resizeEvent (QResizeEvent * e)\fC [protected]\fP"
 
-.SS "QStandardItem * MediaLibrary::searchSong (QStandardItem *albumItem, QStringsong)\fC [private]\fP"
+.SS "QStandardItem * MediaLibrary::searchAlbum (QStandardItem * artistItem, QString album)\fC [private]\fP"
 
-.SS "void MediaLibrary::setTableTag (QStringproperty, QStringvalue)\fC [protected]\fP"
+.SS "QStandardItem * MediaLibrary::searchArtist (QString artist)\fC [private]\fP"
+
+.SS "QStandardItem * MediaLibrary::searchSong (QStandardItem * albumItem, QString song)\fC [private]\fP"
+
+.SS "void MediaLibrary::setTableTag (QString property, QString value)\fC [protected]\fP"
 
 .SH "Member Data Documentation"
 .PP 
 .SS "QMediaPlayer* MediaLibrary::auxplayer\fC [private]\fP"
 
+.SS "QSet<QString> MediaLibrary::searchPath\fC [private]\fP"
+
+.PP
+searchPath stores the search path for seeking songs 
 .SS "QStandardItemModel * MediaLibrary::tableModel\fC [private]\fP"
 
 .SS "QStandardItemModel* MediaLibrary::treeModel\fC [private]\fP"

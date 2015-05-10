@@ -1,10 +1,8 @@
-.TH "Controls" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.TH "Controls" 3 "Sun Apr 26 2015" "Blokbox" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-Controls \- 
-.PP
-The \fBControls\fP class provides support to user control\&.  
+Controls \- The \fBControls\fP class provides support to user control\&.  
 
 .SH SYNOPSIS
 .br
@@ -40,6 +38,10 @@ Inherits \fBAbstractControl\fP\&.
 .RI "void \fBonDurationChanged\fP (qint64 value)"
 .br
 .RI "\fIonDurationChanged slot is called when a new media arives from the playlist \fP"
+.ti -1c
+.RI "void \fBonPlayerStateChanged\fP (bool state)"
+.br
+.RI "\fIonPlayerStateChanged deals with the state of play/pause button \fP"
 .in -1c
 .SS "Signals"
 
@@ -96,6 +98,13 @@ Inherits \fBAbstractControl\fP\&.
 .RI "qint64 \fBduration\fP"
 .br
 .RI "\fIduration stores the total amount of time of current media that is playing \fP"
+.ti -1c
+.RI "QIcon \fBplayIcon\fP"
+.br
+.RI "\fIplay and pause icons for alternating when user media plays or pause \fP"
+.ti -1c
+.RI "QIcon \fBpauseIcon\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -104,7 +113,7 @@ The \fBControls\fP class provides support to user control\&.
 This class allows to programm the interface for dealing with play/pause/prev/next/volume/elapsed time commands 
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "Controls::Controls (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+.SS "Controls::Controls (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
 
 .PP
 Class constructor\&. 
@@ -129,7 +138,7 @@ elapsedSelected tells qt which part of the song the user selected to play
 
 .PP
 next signal is emitted when the user presses next button 
-.SS "void Controls::onDurationChanged (qint64value)\fC [slot]\fP"
+.SS "void Controls::onDurationChanged (qint64 value)\fC [slot]\fP"
 
 .PP
 onDurationChanged slot is called when a new media arives from the playlist When a new media starts to play, mainwindow tells this widget the total amount of time associated to this media\&. 
@@ -140,7 +149,7 @@ onDurationChanged slot is called when a new media arives from the playlist When 
 .RE
 .PP
 
-.SS "void Controls::onElapsedChanged (qint64value)\fC [slot]\fP"
+.SS "void Controls::onElapsedChanged (qint64 value)\fC [slot]\fP"
 
 .PP
 onElapsedChanged is signal activated periodically by mainwindow widget every a new part of the song is played, the stream position changes\&. This position is comunicated to controls widget using some specific signal\&.
@@ -157,6 +166,22 @@ We need two overloaded function, since the scrollbar widget only deals with inte
 
 .PP
 onNextClicked is activated when the user presses next button 
+.SS "void Controls::onPlayerStateChanged (bool state)\fC [slot]\fP"
+
+.PP
+onPlayerStateChanged deals with the state of play/pause button The developer may want to state different icons for each state 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP stores play/pause state
+.IP "\(bu" 2
+true: Player is on playing state
+.IP "\(bu" 2
+false: Player is on paused state 
+.PP
+.RE
+.PP
+
 .SS "void Controls::onPlayPauseClicked (void)\fC [slot]\fP"
 
 .PP
@@ -169,7 +194,7 @@ onPrevClicked is activated when the user presses prev button
 
 .PP
 onSliderReleased is called when the user releases the duration slider When this slider is released, the widget tells mainwindow that user selected a new part of the song to play\&. 
-.SS "void Controls::onVolumeChanged (intvalue)\fC [slot]\fP"
+.SS "void Controls::onVolumeChanged (int value)\fC [slot]\fP"
 
 .PP
 onVolumeChanged is activated when the user turns the dial button 
@@ -198,6 +223,12 @@ volumeSelected signal is emitted when the user selects a new volume
 
 .PP
 duration stores the total amount of time of current media that is playing 
+.SS "QIcon Controls::pauseIcon\fC [private]\fP"
+
+.SS "QIcon Controls::playIcon\fC [private]\fP"
+
+.PP
+play and pause icons for alternating when user media plays or pause 
 .SS "Ui::Controls* Controls::ui\fC [private]\fP"
 
 .PP

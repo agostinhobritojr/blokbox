@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['elapsedselected',['elapsedSelected',['../class_abstract_control.html#a4ef5f5771ae42561aec365a9aabe4615',1,'AbstractControl::elapsedSelected()'],['../class_controls.html#ac44bbe30565ace7514dbb2d0337419a6',1,'Controls::elapsedSelected()']]],
-  ['elapsedtimechanged',['elapsedTimeChanged',['../class_main_window.html#ad255b6b8019a66a663a9c1de04d42a80',1,'MainWindow']]],
-  ['endinsertitems',['endInsertItems',['../class_playlist_model.html#a3580b95c7a3f5d64fd428fd50e01e44a',1,'PlaylistModel']]],
-  ['endremoveitems',['endRemoveItems',['../class_playlist_model.html#ad76ddbdd3b841b6104f5b2523d647d87',1,'PlaylistModel']]]
+  ['levels',['levels',['../class_main_window.html#a59803bb114724dc5f3717dc28539f164',1,'MainWindow']]],
+  ['loadlevels',['loadLevels',['../class_abstract_spectrograph.html#a04da5584e18bbd8954d9daef88418daa',1,'AbstractSpectrograph::loadLevels()'],['../class_spectrograph.html#aeb2d9200c513b1de462de5f16c4cb0ca',1,'Spectrograph::loadLevels()']]],
+  ['loadmedia',['loadMedia',['../class_main_window.html#a5dc0f9a967ac6c534cfbf6e517275ba9',1,'MainWindow']]],
+  ['loadplaylist',['loadPlaylist',['../class_main_window.html#ac877ae03abf6415808e0bb36ff71e5be',1,'MainWindow']]],
+  ['loadsamples',['loadSamples',['../class_abstract_spectrograph.html#a63839b1e9464f8000a9469f013a6e30c',1,'AbstractSpectrograph::loadSamples()'],['../class_spectrograph.html#ae94e6b07459f40c57ed7db97f5d32cf1',1,'Spectrograph::loadSamples()']]]
 ];

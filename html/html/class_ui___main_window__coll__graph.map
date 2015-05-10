@@ -1,0 +1,9 @@
+<map id="Ui_MainWindow" name="Ui_MainWindow">
+<area shape="rect" id="node2" href="$class_spectrograph.html" title="The Spectrograph class is used to draw the fourier spectrum on the screen. " alt="" coords="58,183,157,209"/>
+<area shape="rect" id="node3" href="$class_abstract_spectrograph.html" title="The AbstractSpectrograph class provides a generic interface for a spectrograph drawing widget..." alt="" coords="5,81,153,108"/>
+<area shape="rect" id="node6" href="$class_abstract_media_info.html" title="AbstractMediaInfo" alt="" coords="178,81,306,108"/>
+<area shape="rect" id="node7" href="$class_media_library.html" title="MediaLibrary" alt="" coords="291,132,387,159"/>
+<area shape="rect" id="node9" href="$class_abstract_control.html" title="AbstractControl" alt="" coords="381,81,495,108"/>
+<area shape="rect" id="node5" href="$class_media_info.html" title="The MediaInfo class is supposed to be able to display information about the current media that is bee..." alt="" coords="204,183,283,209"/>
+<area shape="rect" id="node8" href="$class_controls.html" title="The Controls class provides support to user control. " alt="" coords="401,183,472,209"/>
+</map>

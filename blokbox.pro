@@ -13,7 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     spectrograph.cpp \
     fft.cpp \
     controls.cpp \
@@ -21,9 +20,10 @@ SOURCES += main.cpp\
     mediainfo.cpp \
     medialibrary.cpp \
     playlistmodel.cpp \
-    lightcycle.cpp
+    lightcycle.cpp \
+    mainwindow.cpp
  
-HEADERS  += mainwindow.h \
+HEADERS  += \
     spectrograph.h \
     fft.h \
     controls.h \
@@ -34,13 +34,15 @@ HEADERS  += mainwindow.h \
     abstractmediainfo.h \
     medialibrary.h \
     playlistmodel.h \
-    lightcycle.h
+    lightcycle.h \
+    mainwindow.h
    fft.h
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     controls.ui \
     mediainfo.ui \
-    medialibrary.ui
+    medialibrary.ui \
+    mainwindow.ui
 
 RESOURCES += \
     resources.qrc

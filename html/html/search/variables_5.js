@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['image',['image',['../class_light_cycle.html#a942006f6dbd7996d5f3c2fe20c85a5fb',1,'LightCycle']]],
-  ['interval',['interval',['../class_buffer_processor.html#afd46504721e869d1fc0c899c50175a6f',1,'BufferProcessor']]],
-  ['isbusy',['isBusy',['../class_f_f_t_calc.html#a92b1b0c42da940543ce1cf80a9cd6f55',1,'FFTCalc']]],
-  ['item',['item',['../class_main_window.html#a4deb65af7d5cb84853c31faa114f0304',1,'MainWindow']]]
+  ['gradient',['gradient',['../class_spectrograph.html#af1f07ee5e8b940b67d0d38c7b47d400e',1,'Spectrograph']]],
+  ['gradientbrush',['gradientBrush',['../class_spectrograph.html#ab244e2e23356d9dfe91acb9cc941f8e4',1,'Spectrograph']]],
+  ['gravity',['gravity',['../class_spectrograph.html#abababf3964842f53cfcbdcf6d80da8d8',1,'Spectrograph']]]
 ];

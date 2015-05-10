@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['resizeevent',['resizeEvent',['../class_light_cycle.html#ac7cf19de1b4427fb422fdbafd3623500',1,'LightCycle::resizeEvent()'],['../class_media_library.html#acffdd69334229645b005c54795c4437a',1,'MediaLibrary::resizeEvent()'],['../class_spectrograph.html#a06514c3f632bc47c7da2cfd66330e85e',1,'Spectrograph::resizeEvent()']]],
-  ['rightlevel',['rightLevel',['../class_spectrograph.html#aa3426cd81edf016154cfc440d1110f8a',1,'Spectrograph']]],
-  ['rowcount',['rowCount',['../class_playlist_model.html#a2deef5b14f8f66431a55fdb0484025b6',1,'PlaylistModel']]],
-  ['run',['run',['../class_buffer_processor.html#a6faf10ab214287a399d05fce676dca6e',1,'BufferProcessor']]],
-  ['running',['running',['../class_buffer_processor.html#a360e29e204008ae2730752f90c382ecd',1,'BufferProcessor']]]
+  ['setatribute',['setAtribute',['../class_abstract_media_info.html#a59e096003b04baa551608fba8bed00d1',1,'AbstractMediaInfo::setAtribute()'],['../class_media_info.html#ac1a807582e0830e8f7a6167257a8b69a',1,'MediaInfo::setAtribute()']]],
+  ['setmediaat',['setMediaAt',['../class_main_window.html#aedb83314811efab4ea67c69cbce29aea',1,'MainWindow']]],
+  ['setvolume',['setVolume',['../class_main_window.html#aeb9309a7fe8efd574fe5b7ac92ba2a92',1,'MainWindow']]],
+  ['spectrograph',['Spectrograph',['../class_spectrograph.html',1,'Spectrograph'],['../class_spectrograph.html#ae4a10124a7de6cec48ccd09db0ab5fb6',1,'Spectrograph::Spectrograph()']]],
+  ['spectrumavailable',['spectrumAvailable',['../class_main_window.html#a9efd699e3eaed3396733475499297bc0',1,'MainWindow']]],
+  ['spectrumchanged',['spectrumChanged',['../class_main_window.html#a0db59b0091efb9ef939245562e84b79a',1,'MainWindow']]]
 ];

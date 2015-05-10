@@ -1,10 +1,8 @@
-.TH "BufferProcessor" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.TH "BufferProcessor" 3 "Sun Apr 26 2015" "Blokbox" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-BufferProcessor \- 
-.PP
-The \fBBufferProcessor\fP class is designed to process audio buffers sent by mainwindow\&.  
+BufferProcessor \- The \fBBufferProcessor\fP class is designed to process audio buffers sent by mainwindow\&.  
 
 .SH SYNOPSIS
 .br
@@ -116,7 +114,7 @@ and calculate chunck duration based on the buffer duration as
 interval = duration/numberOfChunks 
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "BufferProcessor::BufferProcessor (QObject *parent = \fC0\fP)\fC [explicit]\fP"
+.SS "BufferProcessor::BufferProcessor (QObject * parent = \fC0\fP)\fC [explicit]\fP"
 
 .SS "BufferProcessor::~BufferProcessor ()"
 
@@ -126,9 +124,9 @@ interval = duration/numberOfChunks
 
 .PP
 allDone signal is emmited when all chunks has been processed 
-.SS "void BufferProcessor::calc (QVector< double > &_array, intduration)"
+.SS "void BufferProcessor::calc (QVector< double > & _array, int duration)"
 
-.SS "void BufferProcessor::calculatedSpectrum (QVector< double >spectrum)\fC [signal]\fP"
+.SS "void BufferProcessor::calculatedSpectrum (QVector< double > spectrum)\fC [signal]\fP"
 
 .PP
 calculatedSpectrum is emitted every time a new spectrum is available for displaying every interval ms, a timer sends a new chunk for calculate its fft\&. When it is available, we can send a signal containing the spectrum array 
@@ -139,7 +137,7 @@ calculatedSpectrum is emitted every time a new spectrum is available for display
 .RE
 .PP
 
-.SS "void BufferProcessor::processBuffer (QVector< double >_array, intduration)\fC [slot]\fP"
+.SS "void BufferProcessor::processBuffer (QVector< double > _array, int duration)\fC [slot]\fP"
 
 .PP
 processBuffer is the invoked every time a new audio buffer arrives on mainwindow 

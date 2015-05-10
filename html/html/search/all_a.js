@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['ncols',['ncols',['../class_light_cycle.html#a08b2280e6a25b33cd18c42908805d754',1,'LightCycle']]],
-  ['newspectrum',['newSpectrum',['../class_spectrograph.html#a6776c7d46a475fb744c01b5fd7c6ec45',1,'Spectrograph']]],
-  ['next',['next',['../class_abstract_control.html#a2d22cb619310c6e5124714f50752785e',1,'AbstractControl::next()'],['../class_controls.html#af74535d8202bfdb9049eb58f7d13e690',1,'Controls::next()'],['../class_main_window.html#aabed273350d064a3a8d73afb01848fea',1,'MainWindow::next()']]],
-  ['num_5fbands',['NUM_BANDS',['../class_spectrograph.html#a2ee7c0f9ff6f1c4e91ace1dfb8e1edcb',1,'Spectrograph']]],
-  ['numberofchunks',['numberOfChunks',['../class_buffer_processor.html#af0f4d24a4ecfa5adefa9902eec7be01e',1,'BufferProcessor']]]
+  ['paintevent',['paintEvent',['../class_spectrograph.html#a22138fa296829fb5449202f262e64bf5',1,'Spectrograph']]],
+  ['playlist',['Playlist',['../class_playlist.html',1,'']]],
+  ['playlistmodel',['PlaylistModel',['../class_playlist_model.html',1,'']]],
+  ['playpause',['playPause',['../class_controls.html#afe7504ad0f381214c4183e5be814abc4',1,'Controls::playPause()'],['../class_main_window.html#a6e12ed66de9615bf272f92a47cd5e6c8',1,'MainWindow::playPause()']]],
+  ['playpausechanged',['playPauseChanged',['../class_main_window.html#aff0b22e1f090abb834b8c7cdea65445b',1,'MainWindow']]],
+  ['positionchanged',['positionChanged',['../class_main_window.html#a8df9e5e5d0997eb8e5ecdbcf42bb57ca',1,'MainWindow']]],
+  ['prev',['prev',['../class_controls.html#a166980f14fdc874aecbd5b96ee631888',1,'Controls::prev()'],['../class_main_window.html#a56270e72e4ec5e058a040657932069cf',1,'MainWindow::prev()']]],
+  ['processbuffer',['processBuffer',['../class_buffer_processor.html#a19fedc34939ba4579b9a9bc3c53b7503',1,'BufferProcessor::processBuffer()'],['../class_main_window.html#a5c459d00d64786ef93db7670034af47d',1,'MainWindow::processBuffer()']]]
 ];

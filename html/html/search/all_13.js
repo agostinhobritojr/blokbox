@@ -1,10 +1,20 @@
 var searchData=
 [
-  ['_7ebufferprocessor',['~BufferProcessor',['../class_buffer_processor.html#a3bff89bec0e670f7ae5386bfa7937401',1,'BufferProcessor']]],
-  ['_7econtrols',['~Controls',['../class_controls.html#a546f121f630c5c9db5094f6838d9fed2',1,'Controls']]],
-  ['_7efftcalc',['~FFTCalc',['../class_f_f_t_calc.html#a4e7a3df6e25f51df91444f562aff6c4c',1,'FFTCalc']]],
-  ['_7emainwindow',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
-  ['_7emediainfo',['~MediaInfo',['../class_media_info.html#a28c974ae197fcb8bd2e083c7cb4cb99c',1,'MediaInfo']]],
-  ['_7emedialibrary',['~MediaLibrary',['../class_media_library.html#ae55f73b8304aef586d5eaf0922a931d0',1,'MediaLibrary']]],
-  ['_7eplaylist',['~Playlist',['../class_playlist.html#aacd9a69e347fc19a9a0787d7a7ce9df4',1,'Playlist']]]
+  ['v',['V',['../jquery_8js.html#a8b88915d3d3a06e98248a89807b077fa',1,'jquery.js']]],
+  ['variables_5f0_2ejs',['variables_0.js',['../variables__0_8js.html',1,'']]],
+  ['variables_5f1_2ejs',['variables_1.js',['../variables__1_8js.html',1,'']]],
+  ['variables_5f2_2ejs',['variables_2.js',['../variables__2_8js.html',1,'']]],
+  ['variables_5f3_2ejs',['variables_3.js',['../variables__3_8js.html',1,'']]],
+  ['variables_5f4_2ejs',['variables_4.js',['../variables__4_8js.html',1,'']]],
+  ['variables_5f5_2ejs',['variables_5.js',['../variables__5_8js.html',1,'']]],
+  ['variables_5f6_2ejs',['variables_6.js',['../variables__6_8js.html',1,'']]],
+  ['variables_5f7_2ejs',['variables_7.js',['../variables__7_8js.html',1,'']]],
+  ['variables_5f8_2ejs',['variables_8.js',['../variables__8_8js.html',1,'']]],
+  ['variables_5f9_2ejs',['variables_9.js',['../variables__9_8js.html',1,'']]],
+  ['variables_5fa_2ejs',['variables_a.js',['../variables__a_8js.html',1,'']]],
+  ['variables_5fb_2ejs',['variables_b.js',['../variables__b_8js.html',1,'']]],
+  ['variables_5fc_2ejs',['variables_c.js',['../variables__c_8js.html',1,'']]],
+  ['variables_5fd_2ejs',['variables_d.js',['../variables__d_8js.html',1,'']]],
+  ['variables_5fe_2ejs',['variables_e.js',['../variables__e_8js.html',1,'']]],
+  ['volumeselected',['volumeSelected',['../class_abstract_control.html#ab87486a10333c41af89e9f2f1e4aa00b',1,'AbstractControl::volumeSelected()'],['../class_controls.html#ab4219d5113b05a478c25c5c41203eaf7',1,'Controls::volumeSelected()']]]
 ];

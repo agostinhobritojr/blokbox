@@ -1,0 +1,120 @@
+QPushButton {
+	background-color:transparent; 
+	border:0;
+}
+
+QSlider::groove:horizontal {
+border: 0px;
+height: 10px;
+background: rgb(170, 0, 0);
+margin: 6;
+border-radius: 5px;
+}
+
+QSlider::handle:horizontal {
+background: rgb(199,62,62);
+width: 20px;
+height: 22px;
+margin: -5px;
+border-radius: 10px;
+border: 0px red;
+}
+
+QSlider::groove:vertical {
+border: 0px;
+width: 20px;
+background: rgb(180, 0, 0);
+margin: 0 px 0;
+border-radius: 5px;
+}
+
+QSlider::handle:vertical {
+background: white;
+width: 8px;
+height: 18px;
+margin: 2 2 2 2;
+border-radius: 8px;
+}
+
+QSlider::add-page:qlineargradient {
+background: rgb(143, 0, 0);
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+
+QSlider::sub-page:qlineargradient {
+background: rgb(255, 125, 125);
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+QSplitter::handle:horizontal {
+    width: 1px;
+     background:  rgb(223, 215, 207);
+}
+QSplitter::handle:vertical {
+    height: 1px;
+     background: rgb(223, 215, 207);
+}
+
+QScrollBar::add-line:horizontal {
+     width: 0px;
+}
+
+QScrollBar::sub-line:horizontal {
+     width: 0px;
+ }
+
+QScrollBar::add-line:vertical {
+   height: 0px;
+}
+
+QScrollBar::sub-line:vertical {
+   height: 0px;
+}
+
+QScrollBar:left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+     border: 0px solid grey;
+     width: 0px;
+     height: 0px;
+     background: grey;
+ }
+
+QScrollBar:top-arrow:vertical, QScrollBar::bottom-arrow:vertical {
+     border: 0px solid grey;
+     width: 0px;
+     height: 0px;
+     background: grey;
+ }
+
+QTableView {
+    show-decoration-selected: 1;
+}
+
+
+QTableView::item:alternate {
+    background: #EEEEEE;
+}
+
+QTableView::item:selected {
+    border: 0px solid;
+}
+
+QTableView::item:selected:!active {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E5ABAF, stop: 1 #B28588);
+}
+
+QTableView::item:selected:active {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #a96a6e, stop: 1 #d9888d);
+}
+
+QTableView::item:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #FAFBFE, stop: 1 #F1DCDE);
+}

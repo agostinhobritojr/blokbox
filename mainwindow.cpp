@@ -12,7 +12,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
   // test for saving settings
   QCoreApplication::setOrganizationName("Agostinho");
-  QSettings settings;
+
+  /** some settings attempt
+   */
+  QSettings settings; /*!<aloha */
   settings.setValue("alo","maria");
 
   // defines sample size equals to spectrum size
@@ -147,6 +150,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
   // load directories to library
   connect(ui->actionLoadDirectory,SIGNAL(triggered()),this,SLOT(onAddFolderToLibrary()));
+
+  // load a single file to library
+  connect(ui->actionLoadFile,SIGNAL(triggered()),this,SLOT(loadMedia()));
 }
 
 void MainWindow::goToItem(const QModelIndex &index){

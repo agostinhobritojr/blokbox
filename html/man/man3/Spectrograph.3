@@ -1,10 +1,8 @@
-.TH "Spectrograph" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.TH "Spectrograph" 3 "Sun Apr 26 2015" "Blokbox" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-Spectrograph \- 
-.PP
-The \fBSpectrograph\fP class is used to draw the fourier spectrum on the screen\&.  
+Spectrograph \- The \fBSpectrograph\fP class is used to draw the fourier spectrum on the screen\&.  
 
 .SH SYNOPSIS
 .br
@@ -123,7 +121,7 @@ The \fBSpectrograph\fP class is used to draw the fourier spectrum on the screen\
 It periodically receives an array containing the spectrum with values scaled within the range [0,1], and the left and right mean audio values 
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "Spectrograph::Spectrograph (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+.SS "Spectrograph::Spectrograph (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
 is the pointer to parent widget (it is supposed to be the place where this widget has to be drawn)rief Class constructor\&. Setup initial behavior for the widget 
 .PP
 \fBParameters:\fP
@@ -134,7 +132,7 @@ is the pointer to parent widget (it is supposed to be the place where this widge
 
 .SH "Member Function Documentation"
 .PP 
-.SS "void Spectrograph::loadLevels (doubleleft, doubleright)\fC [slot]\fP"
+.SS "void Spectrograph::loadLevels (double left, double right)\fC [slot]\fP"
 
 .PP
 Open context menu\&. This is what is called when user clicks on the component using mouse right button 
@@ -156,7 +154,7 @@ It also performs some scaling for better display purposes
 .RE
 .PP
 
-.SS "void Spectrograph::loadSamples (QVector< double > &_spectrum)\fC [slot]\fP"
+.SS "void Spectrograph::loadSamples (QVector< double > & _spectrum)\fC [slot]\fP"
 
 .PP
 This method decides what to do when a new spectrum sample has arrived\&.  This method is called periodically by mainwindow every time a new spectrum is calculated\&. the _spectrum array reference stores double values within the range [0,1] and it has 256 elements\&. 
@@ -167,7 +165,7 @@ This method decides what to do when a new spectrum sample has arrived\&.  This m
 .RE
 .PP
 
-.SS "void Spectrograph::paintEvent (QPaintEvent *e)\fC [slot]\fP"
+.SS "void Spectrograph::paintEvent (QPaintEvent * e)\fC [slot]\fP"
 
 .PP
 Paints the screen for spectrum displaing\&. 
@@ -178,7 +176,7 @@ Paints the screen for spectrum displaing\&.
 .RE
 .PP
 
-.SS "void Spectrograph::resizeEvent (QResizeEvent *e)\fC [slot]\fP"
+.SS "void Spectrograph::resizeEvent (QResizeEvent * e)\fC [slot]\fP"
 
 .PP
 What to do when widget size changes\&. It is used to recalculate the width of the bars and some gradient colors 
@@ -189,7 +187,7 @@ What to do when widget size changes\&. It is used to recalculate the width of th
 .RE
 .PP
 
-.SS "void Spectrograph::timerEvent (QTimerEvent *e)\fC [slot]\fP"
+.SS "void Spectrograph::timerEvent (QTimerEvent * e)\fC [slot]\fP"
 
 .PP
 Used to modify spectrum while a new sample does not arrive\&. 

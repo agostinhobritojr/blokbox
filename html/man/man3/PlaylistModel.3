@@ -1,4 +1,4 @@
-.TH "PlaylistModel" 3 "Wed Nov 12 2014" "Blokbox" \" -*- nroff -*-
+.TH "PlaylistModel" 3 "Sun Apr 26 2015" "Blokbox" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -94,35 +94,35 @@ Inherits QAbstractItemModel\&.
 \fB\fIColumnCount \fP\fP
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "PlaylistModel::PlaylistModel (QObject *parent = \fC0\fP)\fC [explicit]\fP"
+.SS "PlaylistModel::PlaylistModel (QObject * parent = \fC0\fP)\fC [explicit]\fP"
 
 .SH "Member Function Documentation"
 .PP 
-.SS "void PlaylistModel::beginInsertItems (intstart, intend)\fC [private]\fP, \fC [slot]\fP"
+.SS "void PlaylistModel::beginInsertItems (int start, int end)\fC [private]\fP, \fC [slot]\fP"
 
-.SS "void PlaylistModel::beginRemoveItems (intstart, intend)\fC [private]\fP, \fC [slot]\fP"
+.SS "void PlaylistModel::beginRemoveItems (int start, int end)\fC [private]\fP, \fC [slot]\fP"
 
-.SS "void PlaylistModel::changeItems (intstart, intend)\fC [private]\fP, \fC [slot]\fP"
+.SS "void PlaylistModel::changeItems (int start, int end)\fC [private]\fP, \fC [slot]\fP"
 
-.SS "int PlaylistModel::columnCount (const QModelIndex &parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
+.SS "int PlaylistModel::columnCount (const QModelIndex & parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
 
-.SS "QVariant PlaylistModel::data (const QModelIndex &index, introle = \fCQt::DisplayRole\fP) const\fC [slot]\fP"
+.SS "QVariant PlaylistModel::data (const QModelIndex & index, int role = \fCQt::DisplayRole\fP) const\fC [slot]\fP"
 
 .SS "void PlaylistModel::endInsertItems ()\fC [private]\fP, \fC [slot]\fP"
 
 .SS "void PlaylistModel::endRemoveItems ()\fC [private]\fP, \fC [slot]\fP"
 
-.SS "QModelIndex PlaylistModel::index (introw, intcolumn, const QModelIndex &parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
+.SS "QModelIndex PlaylistModel::index (int row, int column, const QModelIndex & parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
 
-.SS "QModelIndex PlaylistModel::parent (const QModelIndex &child) const\fC [slot]\fP"
+.SS "QModelIndex PlaylistModel::parent (const QModelIndex & child) const\fC [slot]\fP"
 
 .SS "QMediaPlaylist * PlaylistModel::playlist () const\fC [slot]\fP"
 
-.SS "int PlaylistModel::rowCount (const QModelIndex &parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
+.SS "int PlaylistModel::rowCount (const QModelIndex & parent = \fCQModelIndex()\fP) const\fC [slot]\fP"
 
-.SS "bool PlaylistModel::setData (const QModelIndex &index, const QVariant &value, introle = \fCQt::DisplayRole\fP)\fC [slot]\fP"
+.SS "bool PlaylistModel::setData (const QModelIndex & index, const QVariant & value, int role = \fCQt::DisplayRole\fP)\fC [slot]\fP"
 
-.SS "void PlaylistModel::setPlaylist (QMediaPlaylist *playlist)\fC [slot]\fP"
+.SS "void PlaylistModel::setPlaylist (QMediaPlaylist * playlist)\fC [slot]\fP"
 
 .SH "Member Data Documentation"
 .PP 

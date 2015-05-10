@@ -1,21 +1,13 @@
 var searchData=
 [
-  ['m_5fdata',['m_data',['../class_playlist_model.html#a8417c6a222ad54c85900578b68c69e5a',1,'PlaylistModel']]],
-  ['m_5fplaylist',['m_playlist',['../class_playlist.html#adbe5c851a28cdc770efc6ad2383115fb',1,'Playlist::m_playlist()'],['../class_playlist_model.html#ac7dbe7b542fb312e1d5834dccef7be05',1,'PlaylistModel::m_playlist()']]],
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow::MainWindow()']]],
-  ['mainwindow_2ecpp',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
-  ['mainwindow_2eh',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
-  ['matrix',['matrix',['../class_light_cycle.html#a2fa56e1d306b47c96cef9d4e18531845',1,'LightCycle']]],
-  ['mediainfo',['MediaInfo',['../class_media_info.html',1,'MediaInfo'],['../class_media_info.html#a80b7af5a999c7ab31e4207c39ccb8833',1,'MediaInfo::MediaInfo()']]],
-  ['mediainfo_2ecpp',['mediainfo.cpp',['../mediainfo_8cpp.html',1,'']]],
-  ['mediainfo_2eh',['mediainfo.h',['../mediainfo_8h.html',1,'']]],
-  ['medialibrary',['MediaLibrary',['../class_media_library.html',1,'MediaLibrary'],['../class_media_library.html#a98e4fe21faa9984a0492397a88f829d6',1,'MediaLibrary::MediaLibrary()']]],
-  ['medialibrary_2ecpp',['medialibrary.cpp',['../medialibrary_8cpp.html',1,'']]],
-  ['medialibrary_2eh',['medialibrary.h',['../medialibrary_8h.html',1,'']]],
-  ['mediastatuschanged',['mediaStatusChanged',['../class_main_window.html#a2758962312cc237231c349b21603d9fe',1,'MainWindow']]],
-  ['metadataavailablechanged',['metaDataAvailableChanged',['../class_main_window.html#ac7664400c470d7312a62ec8f4f7822a6',1,'MainWindow']]],
-  ['metadatachanged',['metaDataChanged',['../class_main_window.html#aa4ec6868c3ee50f63ffe4803a7136ae6',1,'MainWindow']]],
-  ['model',['model',['../class_main_window.html#aa1a1f8ce9c37a7ac70d21402759638b3',1,'MainWindow::model()'],['../class_playlist.html#a358cf5a2ffa44041407a447f0907258e',1,'Playlist::model()']]]
+  ['onaddfoldertolibrary',['onAddFolderToLibrary',['../class_main_window.html#adfe649ead81cae66045f7c2d4987d550',1,'MainWindow']]],
+  ['onaddmediatoplaylist',['onAddMediaToPlayList',['../class_main_window.html#a8bb0a943725aa0d7959a8a93da3194fc',1,'MainWindow']]],
+  ['ondurationchanged',['onDurationChanged',['../class_controls.html#a7abbbb170c237e803401311c012492ba',1,'Controls']]],
+  ['onelapsedchanged',['onElapsedChanged',['../class_controls.html#a09f5f92331f2531ead8a02612ae60127',1,'Controls']]],
+  ['onnextclicked',['onNextClicked',['../class_controls.html#a4e7c1ea477ffeb066399d48404ede8b0',1,'Controls']]],
+  ['onplayerstatechanged',['onPlayerStateChanged',['../class_controls.html#ad78ebd97a1362b2880d5a6149d44e871',1,'Controls']]],
+  ['onplaypauseclicked',['onPlayPauseClicked',['../class_controls.html#ae5e221035bf36156c77c629fe4be453d',1,'Controls']]],
+  ['onprevclicked',['onPrevClicked',['../class_controls.html#a48610eb52367be6c7509457244821335',1,'Controls']]],
+  ['onsliderreleased',['onSliderReleased',['../class_controls.html#a45ba0a2beabcacf2065807adce607e73',1,'Controls']]],
+  ['onvolumechanged',['onVolumeChanged',['../class_controls.html#af599078654027314f33d922ce601a054',1,'Controls']]]
 ];

@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['tablemodel',['tableModel',['../class_media_library.html#afe364a1d2240190eba41ed7a04d1d5bc',1,'MediaLibrary']]],
-  ['time',['time',['../class_spectrograph.html#a13e5c417c277d301359135a048a93fc3',1,'Spectrograph']]],
-  ['timer',['timer',['../class_buffer_processor.html#a629131ccaf96b3546eac2bc6112e2844',1,'BufferProcessor']]],
-  ['title',['title',['../class_media_info.html#a843511475196e275f5e79dea5cd81409',1,'MediaInfo']]],
-  ['tmp',['tmp',['../class_light_cycle.html#a5ba6afafdb70919bc95e6cb06122a81d',1,'LightCycle']]],
-  ['track',['track',['../class_media_info.html#a76d27e1b603b95255e72e93cdc4d6c00',1,'MediaInfo']]],
-  ['treemodel',['treeModel',['../class_media_library.html#a9c304ac998b2366d016b09e34ae37391',1,'MediaLibrary']]]
+  ['pass',['pass',['../class_buffer_processor.html#a7150ff291d4afb6fd4d03c1ad4fea8eb',1,'BufferProcessor']]],
+  ['pauseicon',['pauseIcon',['../class_controls.html#a78fcd6a6371744fac90b191252769ee1',1,'Controls']]],
+  ['pen',['pen',['../class_light_cycle.html#ae87e098b8c039d3687aec84c4596ffba',1,'LightCycle::pen()'],['../class_spectrograph.html#a83532ee641bd21c14b41a7c7ee1ed084',1,'Spectrograph::pen()']]],
+  ['pi',['PI',['../fft_8h.html#a952eac791b596a61bba0a133a3bb439f',1,'fft.h']]],
+  ['pixmap',['pixmap',['../class_light_cycle.html#ab0fcff933b87ab513b2b0a2c673c25d9',1,'LightCycle']]],
+  ['player',['player',['../class_main_window.html#af3f32d4111cefe576b4789f3611e99e8',1,'MainWindow']]],
+  ['playicon',['playIcon',['../class_controls.html#a066fde47543bfe33c14e53cda019b4c2',1,'Controls']]],
+  ['playlist',['playlist',['../class_main_window.html#a6fc6b1c1f13024793467e79919675b8d',1,'MainWindow']]],
+  ['playlistmodel',['playlistModel',['../class_main_window.html#a47ea7b5c5683d37a719e5e135e8ef290',1,'MainWindow']]],
+  ['probe',['probe',['../class_main_window.html#a0c2fbf87847a015d0285044e6b021052',1,'MainWindow']]],
+  ['processor',['processor',['../class_f_f_t_calc.html#a3851c165ac7b5c2cbf37994308def702',1,'FFTCalc']]],
+  ['processorthread',['processorThread',['../class_f_f_t_calc.html#acf1d850548a3cf213f2573466bc3e10a',1,'FFTCalc']]],
+  ['prototype',['prototype',['../jquery_8js.html#aa3ec85d56639a2571aeff4d7e06f1190',1,'jquery.js']]]
 ];

@@ -16,6 +16,7 @@ void LightCycle::setText(QString text){
   QColor color;
   QPainter p;
   int textWidthinPixels;
+  qDebug() << "texto = " << text ;
   if(text.size() == 0)
     text = QString("Desconhecido");
   QFont font;

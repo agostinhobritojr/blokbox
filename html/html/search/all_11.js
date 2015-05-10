@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['volumeselected',['volumeSelected',['../class_abstract_control.html#ab87486a10333c41af89e9f2f1e4aa00b',1,'AbstractControl::volumeSelected()'],['../class_controls.html#ab4219d5113b05a478c25c5c41203eaf7',1,'Controls::volumeSelected()']]]
+  ['_7econtrols',['~Controls',['../class_controls.html#a546f121f630c5c9db5094f6838d9fed2',1,'Controls']]],
+  ['_7emediainfo',['~MediaInfo',['../class_media_info.html#a28c974ae197fcb8bd2e083c7cb4cb99c',1,'MediaInfo']]]
 ];

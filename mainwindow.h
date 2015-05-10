@@ -28,9 +28,10 @@
 // mainwindow uses a fft calculator and a playlist model for displaying the playlist
 #include "fftcalc.h"
 #include "playlistmodel.h"
-
+/** @mainpage Blokbox: a modular music player
+  */
 /**
- * @brief This is the namespace that defines the mainwindow ui widget.
+ * @brief This is the namespace that defines the MainWindow1 ui widget.
  * This is not the MainWindow class that is defined in this file
  */
 namespace Ui {
