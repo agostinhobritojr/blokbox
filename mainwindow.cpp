@@ -257,7 +257,7 @@ void MainWindow::processBuffer(QAudioBuffer buffer){
   // when it is done, calculator will tell us
   if(probe->isActive()){
     duration = buffer.format().durationForBytes(buffer.frameCount())/1000;
-    qDebug() << "duracao =" << duration;
+    //qDebug() << "duracao =" << duration;
     calculator->calc(sample, duration);
   }
   // tells anyone interested about left and right mean levels

@@ -8,7 +8,7 @@
 #include <QImage>
 #include <QVector>
 
-#define SEGMENT_HEIGHT 11
+#define SEGMENT_HEIGHT 15
 class LightCycle : public QWidget
 {
   Q_OBJECT

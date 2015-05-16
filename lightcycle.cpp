@@ -19,8 +19,10 @@ void LightCycle::setText(QString text){
   qDebug() << "texto = " << text ;
   if(text.size() == 0)
     text = QString("Desconhecido");
+  text+="  ";
   QFont font;
-  font.setStyleHint(QFont::Monospace);
+  font.setStyleHint(QFont::Courier);
+  font.setWeight(QFont::Light);
   font.setKerning(false);
   font.setPixelSize(SEGMENT_HEIGHT);
   QFontMetrics fm(font);
@@ -46,13 +48,17 @@ void LightCycle::setText(QString text){
   for(int i=0; i<image.width(); i++){
     for(int j=0; j<SEGMENT_HEIGHT; j++){
       color = image.pixel(i,j);
-      if(color.value()==0)
+      qDebug() << color.value();
+      // checks if the color is white (background color)
+      if(color.value()!=255)
         column[j] = true;
       else
         column[j] = false;
     }
     matrix.push_back(column);
   }
+  std::ofstream fout;
+
   repaint();
 }
 void LightCycle::resizeEvent(QResizeEvent *e){
