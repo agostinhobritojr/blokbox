@@ -96,23 +96,41 @@ public slots:
 //  void doAction();
 private:
   /**
-   * @brief Stores the fft spectrum.
+   * @brief Stores the current fft spectrum.
    * @details spectrum is an array that should have a MAXIMUM of 256 entries.
    * You should not trespass this limit
    */
   QVector<int> spectrum;
+  /**
+   * @brief newSpectrum stores the new fft spectrum that arrives to this object
+   * @details since we are doing spectrum simulation just like a graphical equalizer
+   * the new spectrum values are displayed only when the are larger than the previous
+   * ones
+   */
   QVector<double> newSpectrum;
-  QVector<double> gravity;
-  QVector<int> decay;
-  int decayIncr;
 
   /**
-   * @brief Stores the delay for decay bars to simulate gravity
+   * @brief gravity decides when each decay bar has to start to decay
+   * @details This array simulates for each decay bar a small "freeze" to make it stopped
+   * when a spectrum bar reaches a new maximum
+   */
+  QVector<double> gravity;
+  /**
+   * @brief decay stores the position of the decay bars at the top of a spectrum bar
+   */
+  QVector<int> decay;
+
+  /**
+   * @brief Stores the delay for decay bars and spectrum bars to simulate gravity
+   * @details delay[0] stores how much have to be subtracted from each spectrum bar value
+   * to display a given spectrum bar
+   * @details delay[1] stores how much have to be subtracted from each decay bar value
+   * to display a given decay bar
    */
   QVector<int> delay[2];
 
   /**
-   * @brief Left and right level bar size
+   * @brief Left and right level bar size (mean audio level)
    */
   int leftLevel, rightLevel;
   /**
@@ -132,11 +150,17 @@ private:
    */
   QPen pen;
   /**
-   * @brief Spacing between spectrum bars. Usually, just one pixel
+   * @brief barSpacing defines the space between spectrum bars. Usually, just one pixel
    */
-  float barSpacing, barWidth, widgetHeight, altura;
-  QAction *acao;
-  double time;
+  float barSpacing;
+  /**
+   * @brief barWidth stores spectrum bar width
+   */
+  float barWidth;
+  /**
+   * @brief widgetHeight stores the widget height
+   */
+  float widgetHeight;
 };
 
 #endif // SPECTROGRAM_H

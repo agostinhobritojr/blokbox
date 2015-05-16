@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['resizeevent',['resizeEvent',['../class_spectrograph.html#a06514c3f632bc47c7da2cfd66330e85e',1,'Spectrograph']]],
-  ['run',['run',['../class_buffer_processor.html#a6faf10ab214287a399d05fce676dca6e',1,'BufferProcessor']]]
+  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['mainwindow',['MainWindow',['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]],
+  ['mediainfo',['MediaInfo',['../class_media_info.html#a80b7af5a999c7ab31e4207c39ccb8833',1,'MediaInfo']]],
+  ['medialibrary',['MediaLibrary',['../class_media_library.html#a98e4fe21faa9984a0492397a88f829d6',1,'MediaLibrary']]],
+  ['mediastatechanged',['mediaStateChanged',['../class_main_window.html#a79a69a6b40ef022351f1332e9dd42a4b',1,'MainWindow']]],
+  ['mediastatuschanged',['mediaStatusChanged',['../class_main_window.html#a2758962312cc237231c349b21603d9fe',1,'MainWindow']]],
+  ['metadatachanged',['metaDataChanged',['../class_main_window.html#aa4ec6868c3ee50f63ffe4803a7136ae6',1,'MainWindow']]]
 ];

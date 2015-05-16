@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['_7econtrols',['~Controls',['../class_controls.html#a546f121f630c5c9db5094f6838d9fed2',1,'Controls']]],
-  ['_7emediainfo',['~MediaInfo',['../class_media_info.html#a28c974ae197fcb8bd2e083c7cb4cb99c',1,'MediaInfo']]]
+  ['resizeevent',['resizeEvent',['../class_light_cycle.html#ac7cf19de1b4427fb422fdbafd3623500',1,'LightCycle::resizeEvent()'],['../class_media_library.html#acffdd69334229645b005c54795c4437a',1,'MediaLibrary::resizeEvent()'],['../class_spectrograph.html#a06514c3f632bc47c7da2cfd66330e85e',1,'Spectrograph::resizeEvent()']]],
+  ['rowcount',['rowCount',['../class_playlist_model.html#a2deef5b14f8f66431a55fdb0484025b6',1,'PlaylistModel']]],
+  ['run',['run',['../class_buffer_processor.html#a6faf10ab214287a399d05fce676dca6e',1,'BufferProcessor']]]
 ];

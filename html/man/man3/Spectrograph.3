@@ -1,4 +1,4 @@
-.TH "Spectrograph" 3 "Sun Apr 26 2015" "Blokbox" \" -*- nroff -*-
+.TH "Spectrograph" 3 "Sat May 16 2015" "Blokbox" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -52,23 +52,23 @@ Inherits \fBAbstractSpectrograph\fP\&.
 .ti -1c
 .RI "QVector< double > \fBnewSpectrum\fP"
 .br
+.RI "\fInewSpectrum stores the new fft spectrum that arrives to this object \fP"
 .ti -1c
 .RI "QVector< double > \fBgravity\fP"
 .br
+.RI "\fIgravity decides when each decay bar has to start to decay \fP"
 .ti -1c
 .RI "QVector< int > \fBdecay\fP"
 .br
-.ti -1c
-.RI "int \fBdecayIncr\fP"
-.br
+.RI "\fIdecay stores the position of the decay bars at the top of a spectrum bar \fP"
 .ti -1c
 .RI "QVector< int > \fBdelay\fP [2]"
 .br
-.RI "\fIStores the delay for decay bars to simulate gravity\&. \fP"
+.RI "\fIStores the delay for decay bars and spectrum bars to simulate gravity\&. \fP"
 .ti -1c
 .RI "int \fBleftLevel\fP"
 .br
-.RI "\fILeft and right level bar size\&. \fP"
+.RI "\fILeft and right level bar size (mean audio level) \fP"
 .ti -1c
 .RI "int \fBrightLevel\fP"
 .br
@@ -97,22 +97,15 @@ Inherits \fBAbstractSpectrograph\fP\&.
 .ti -1c
 .RI "float \fBbarSpacing\fP"
 .br
-.RI "\fISpacing between spectrum bars\&. Usually, just one pixel\&. \fP"
+.RI "\fIbarSpacing defines the space between spectrum bars\&. Usually, just one pixel \fP"
 .ti -1c
 .RI "float \fBbarWidth\fP"
 .br
+.RI "\fIbarWidth stores spectrum bar width \fP"
 .ti -1c
 .RI "float \fBwidgetHeight\fP"
 .br
-.ti -1c
-.RI "float \fBaltura\fP"
-.br
-.ti -1c
-.RI "QAction * \fBacao\fP"
-.br
-.ti -1c
-.RI "double \fBtime\fP"
-.br
+.RI "\fIwidgetHeight stores the widget height \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -200,28 +193,28 @@ Used to modify spectrum while a new sample does not arrive\&.
 
 .SH "Member Data Documentation"
 .PP 
-.SS "QAction* Spectrograph::acao\fC [private]\fP"
-
-.SS "float Spectrograph::altura\fC [private]\fP"
-
 .SS "QBrush Spectrograph::backgroundBrush\fC [private]\fP"
 
 .SS "float Spectrograph::barSpacing\fC [private]\fP"
 
 .PP
-Spacing between spectrum bars\&. Usually, just one pixel\&. 
+barSpacing defines the space between spectrum bars\&. Usually, just one pixel 
 .SS "float Spectrograph::barWidth\fC [private]\fP"
 
+.PP
+barWidth stores spectrum bar width 
 .SS "QVector<int> Spectrograph::decay\fC [private]\fP"
 
+.PP
+decay stores the position of the decay bars at the top of a spectrum bar 
 .SS "QBrush Spectrograph::decayBrush\fC [private]\fP"
-
-.SS "int Spectrograph::decayIncr\fC [private]\fP"
 
 .SS "QVector<int> Spectrograph::delay[2]\fC [private]\fP"
 
 .PP
-Stores the delay for decay bars to simulate gravity\&. 
+Stores the delay for decay bars and spectrum bars to simulate gravity\&. delay[0] stores how much have to be subtracted from each spectrum bar value to display a given spectrum bar
+.PP
+delay[1] stores how much have to be subtracted from each decay bar value to display a given decay bar 
 .SS "QLinearGradient Spectrograph::gradient\fC [private]\fP"
 
 .PP
@@ -232,12 +225,16 @@ Holds the gradient for drawing the spectrum bars\&.
 Brushes for drawing the gradient and background patterns\&. 
 .SS "QVector<double> Spectrograph::gravity\fC [private]\fP"
 
+.PP
+gravity decides when each decay bar has to start to decay This array simulates for each decay bar a small 'freeze' to make it stopped when a spectrum bar reaches a new maximum 
 .SS "int Spectrograph::leftLevel\fC [private]\fP"
 
 .PP
-Left and right level bar size\&. 
+Left and right level bar size (mean audio level) 
 .SS "QVector<double> Spectrograph::newSpectrum\fC [private]\fP"
 
+.PP
+newSpectrum stores the new fft spectrum that arrives to this object since we are doing spectrum simulation just like a graphical equalizer the new spectrum values are displayed only when the are larger than the previous ones 
 .SS "int Spectrograph::NUM_BANDS\fC [private]\fP"
 
 .PP
@@ -251,13 +248,13 @@ A pen for drawing lines\&.
 .SS "QVector<int> Spectrograph::spectrum\fC [private]\fP"
 
 .PP
-Do some example action when user activates context menu\&. You can add new of such functions to allow new context menu entries Stores the fft spectrum\&.
+Do some example action when user activates context menu\&. You can add new of such functions to allow new context menu entries Stores the current fft spectrum\&.
 .PP
 spectrum is an array that should have a MAXIMUM of 256 entries\&. You should not trespass this limit 
-.SS "double Spectrograph::time\fC [private]\fP"
-
 .SS "float Spectrograph::widgetHeight\fC [private]\fP"
 
+.PP
+widgetHeight stores the widget height 
 
 .SH "Author"
 .PP 

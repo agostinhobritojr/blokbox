@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]],
-  ['mediainfo',['MediaInfo',['../class_media_info.html#a80b7af5a999c7ab31e4207c39ccb8833',1,'MediaInfo']]],
-  ['mediastatechanged',['mediaStateChanged',['../class_main_window.html#a79a69a6b40ef022351f1332e9dd42a4b',1,'MainWindow']]],
-  ['mediastatuschanged',['mediaStatusChanged',['../class_main_window.html#a2758962312cc237231c349b21603d9fe',1,'MainWindow']]],
-  ['metadatachanged',['metaDataChanged',['../class_main_window.html#aa4ec6868c3ee50f63ffe4803a7136ae6',1,'MainWindow']]]
+  ['fft',['fft',['../fft_8cpp.html#a22051cd252d576aec530227d32d95bdd',1,'fft(CArray &amp;x):&#160;fft.cpp'],['../fft_8h.html#a22051cd252d576aec530227d32d95bdd',1,'fft(CArray &amp;x):&#160;fft.cpp']]],
+  ['fftcalc',['FFTCalc',['../class_f_f_t_calc.html#ae6b220dd66a6df99041680e55746c79e',1,'FFTCalc']]],
+  ['freecalc',['freeCalc',['../class_f_f_t_calc.html#ae12ef5c098a2bb3070a743927ef50da7',1,'FFTCalc']]]
 ];

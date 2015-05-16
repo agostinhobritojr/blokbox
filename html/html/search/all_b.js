@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['qt_5fmeta_5fstringdata_5fabstractcontrol_5ft',['qt_meta_stringdata_AbstractControl_t',['../structqt__meta__stringdata___abstract_control__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fabstractmediainfo_5ft',['qt_meta_stringdata_AbstractMediaInfo_t',['../structqt__meta__stringdata___abstract_media_info__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fabstractspectrograph_5ft',['qt_meta_stringdata_AbstractSpectrograph_t',['../structqt__meta__stringdata___abstract_spectrograph__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fbufferprocessor_5ft',['qt_meta_stringdata_BufferProcessor_t',['../structqt__meta__stringdata___buffer_processor__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fcontrols_5ft',['qt_meta_stringdata_Controls_t',['../structqt__meta__stringdata___controls__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5ffftcalc_5ft',['qt_meta_stringdata_FFTCalc_t',['../structqt__meta__stringdata___f_f_t_calc__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5flightcycle_5ft',['qt_meta_stringdata_LightCycle_t',['../structqt__meta__stringdata___light_cycle__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fmainwindow_5ft',['qt_meta_stringdata_MainWindow_t',['../structqt__meta__stringdata___main_window__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fmediainfo_5ft',['qt_meta_stringdata_MediaInfo_t',['../structqt__meta__stringdata___media_info__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fmedialibrary_5ft',['qt_meta_stringdata_MediaLibrary_t',['../structqt__meta__stringdata___media_library__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fplaylistmodel_5ft',['qt_meta_stringdata_PlaylistModel_t',['../structqt__meta__stringdata___playlist_model__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fspectrograph_5ft',['qt_meta_stringdata_Spectrograph_t',['../structqt__meta__stringdata___spectrograph__t.html',1,'']]]
+  ['m_5fdata',['m_data',['../class_playlist_model.html#a8417c6a222ad54c85900578b68c69e5a',1,'PlaylistModel']]],
+  ['m_5fplaylist',['m_playlist',['../class_playlist.html#adbe5c851a28cdc770efc6ad2383115fb',1,'Playlist::m_playlist()'],['../class_playlist_model.html#ac7dbe7b542fb312e1d5834dccef7be05',1,'PlaylistModel::m_playlist()']]],
+  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainwindow',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow::MainWindow()']]],
+  ['mainwindow_2ecpp',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
+  ['mainwindow_2eh',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
+  ['matrix',['matrix',['../class_light_cycle.html#a2fa56e1d306b47c96cef9d4e18531845',1,'LightCycle']]],
+  ['mediainfo',['MediaInfo',['../class_media_info.html',1,'MediaInfo'],['../class_media_info.html#a80b7af5a999c7ab31e4207c39ccb8833',1,'MediaInfo::MediaInfo()']]],
+  ['mediainfo_2ecpp',['mediainfo.cpp',['../mediainfo_8cpp.html',1,'']]],
+  ['mediainfo_2eh',['mediainfo.h',['../mediainfo_8h.html',1,'']]],
+  ['medialibrary',['MediaLibrary',['../class_media_library.html',1,'MediaLibrary'],['../class_media_library.html#a98e4fe21faa9984a0492397a88f829d6',1,'MediaLibrary::MediaLibrary()']]],
+  ['medialibrary_2ecpp',['medialibrary.cpp',['../medialibrary_8cpp.html',1,'']]],
+  ['medialibrary_2eh',['medialibrary.h',['../medialibrary_8h.html',1,'']]],
+  ['mediastatechanged',['mediaStateChanged',['../class_main_window.html#a79a69a6b40ef022351f1332e9dd42a4b',1,'MainWindow']]],
+  ['mediastatuschanged',['mediaStatusChanged',['../class_main_window.html#a2758962312cc237231c349b21603d9fe',1,'MainWindow']]],
+  ['metadatachanged',['metaDataChanged',['../class_main_window.html#aa4ec6868c3ee50f63ffe4803a7136ae6',1,'MainWindow']]],
+  ['model',['model',['../class_main_window.html#aa1a1f8ce9c37a7ac70d21402759638b3',1,'MainWindow::model()'],['../class_playlist.html#a358cf5a2ffa44041407a447f0907258e',1,'Playlist::model()']]]
 ];
