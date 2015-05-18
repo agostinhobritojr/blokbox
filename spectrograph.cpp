@@ -17,7 +17,7 @@ Spectrograph::Spectrograph(QWidget *parent) :
   startTimer(15);
   // however 256 samples may be delivered to this widget, only
   // 64 are to be displayed becaus of speed limitations ;)
-  NUM_BANDS = 64;
+  NUM_BANDS = 32;
 
   //
   spectrum.resize(NUM_BANDS);
@@ -54,7 +54,7 @@ void Spectrograph::resizeEvent(QResizeEvent *e){
   gradient.setColorAt(0, Qt::white);
   gradientBrush = QBrush(gradient);
   barWidth = (float)width()/NUM_BANDS;
-  qDebug() << "barwidth = " << barWidth;
+  //qDebug() << "barwidth = " << barWidth;
   widgetHeight = height();
   repaint();
 }

@@ -44,7 +44,6 @@ void LightCycle::setText(QString text){
   p.end();
   image = pixmap.toImage();
   matrix.clear();
-  qDebug() << image.size();
   for(int i=0; i<image.width(); i++){
     for(int j=0; j<SEGMENT_HEIGHT; j++){
       color = image.pixel(i,j);
@@ -57,8 +56,6 @@ void LightCycle::setText(QString text){
     }
     matrix.push_back(column);
   }
-//  std::ofstream fout;
-
   repaint();
 }
 void LightCycle::resizeEvent(QResizeEvent *e){
@@ -67,7 +64,6 @@ void LightCycle::resizeEvent(QResizeEvent *e){
   if(lightDiameter <= 1)
     lightDiameter = 2;
   ncols = width()/lightDiameter;
-  qDebug() << ncols;
   if(ncols > image.width()){
     for(int i=0; i<SEGMENT_HEIGHT; i++){
       column[i] = false;
@@ -79,23 +75,10 @@ void LightCycle::resizeEvent(QResizeEvent *e){
   else{
     matrix.resize(image.width());
   }
-  qDebug() << ncols << "/" << matrix.size();
 }
 
 void LightCycle::timerEvent(QTimerEvent *e){
   Q_UNUSED(e);
-  /*
-  QRect rect;
-  QVector<QRgb> column(SEGMENT_HEIGHT);
-  for(int i=0; i<SEGMENT_HEIGHT; i++){
-    column[i] = image.pixel(0,i);
-  }
-  pixmap.scroll(-1,0,pixmap.rect());
-  image=pixmap.toImage();
-  for(int i=0; i<SEGMENT_HEIGHT; i++){
-    image.setPixel(pixmap.width()-1,i,column[i]);
-  }
-  pixmap = pixmap.fromImage(image);*/
   startColumn++;
   if(startColumn > matrix.size())
     startColumn=0;
