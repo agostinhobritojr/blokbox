@@ -57,7 +57,7 @@ void LightCycle::setText(QString text){
     }
     matrix.push_back(column);
   }
-  std::ofstream fout;
+//  std::ofstream fout;
 
   repaint();
 }
